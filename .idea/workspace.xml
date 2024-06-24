@@ -5,10 +5,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5916bcdf-e307-435a-9721-0765483fbccb" name="Changes" comment="Parte Afonso feita- falta testes">
+      <change afterPath="$PROJECT_DIR$/src/test/java/NovoEmprestimoTeste.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Aquisicao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Aquisicoes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoes$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoes$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoesExemplar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoesExemplar$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoesExemplar$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoesExemplar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimos$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimos$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimos$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimosSocio$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimosSocio$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimosSocio$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimosSocio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Emprestimo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Emprestimos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Exemplar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Exemplares.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/NovaAquisicao$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/NovaAquisicao$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/NovaAquisicao$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/NovaAquisicao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/NovoEmprestimo$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/NovoEmprestimo$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/NovoEmprestimo$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/NovoEmprestimo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Predefinicoes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Predefinicoes$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Predefinicoes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucao$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucao$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucao$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucao$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucaoSocio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Socio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Socios.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/ValoresPredefinicoes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimosSocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimosSocio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Emprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Emprestimo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/NovoEmprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NovoEmprestimo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Socio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RegistarDevolucao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RegistarDevolucao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,31 +130,56 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration name="NovoEmprestimoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.NovoEmprestimoTeste">
+    <configuration name="NovoEmprestimoTeste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTest" />
+      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NovoEmprestimoTest.testConfirmButtonActionListener" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NovoEmprestimoTeste.testAdicionarEmprestimoWithInvalidExemplarCodeFormat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTest" />
-      <option name="METHOD_NAME" value="testConfirmButtonActionListener" />
+      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
+      <option name="METHOD_NAME" value="testAdicionarEmprestimoWithInvalidExemplarCodeFormat" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NovoEmprestimoTest.testErrorMessageWhenSocioDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NovoEmprestimoTeste.testAdicionarEmprestimoWithLoanedExemplar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTest" />
-      <option name="METHOD_NAME" value="testErrorMessageWhenSocioDoesNotExist" />
+      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
+      <option name="METHOD_NAME" value="testAdicionarEmprestimoWithLoanedExemplar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NovoEmprestimoTeste.testAdicionarEmprestimoWithNormalSocioAtMaxLoans" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="swing-app" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
+      <option name="METHOD_NAME" value="testAdicionarEmprestimoWithNormalSocioAtMaxLoans" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NovoEmprestimoTeste.testAdicionarEmprestimoWithPremiumSocioAtMaxLoans" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="swing-app" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
+      <option name="METHOD_NAME" value="testAdicionarEmprestimoWithPremiumSocioAtMaxLoans" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,9 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NovoEmprestimoTest" />
-        <item itemvalue="JUnit.NovoEmprestimoTest.testErrorMessageWhenSocioDoesNotExist" />
-        <item itemvalue="JUnit.NovoEmprestimoTest.testConfirmButtonActionListener" />
+        <item itemvalue="JUnit.NovoEmprestimoTeste" />
+        <item itemvalue="JUnit.NovoEmprestimoTeste.testAdicionarEmprestimoWithLoanedExemplar" />
+        <item itemvalue="JUnit.NovoEmprestimoTeste.testAdicionarEmprestimoWithInvalidExemplarCodeFormat" />
+        <item itemvalue="JUnit.NovoEmprestimoTeste.testAdicionarEmprestimoWithPremiumSocioAtMaxLoans" />
+        <item itemvalue="JUnit.NovoEmprestimoTeste.testAdicionarEmprestimoWithNormalSocioAtMaxLoans" />
       </list>
     </recent_temporary>
   </component>
@@ -108,7 +206,7 @@
       <workItem from="1719147371411" duration="14921000" />
       <workItem from="1719214590442" duration="8333000" />
       <workItem from="1719223132346" duration="21610000" />
-      <workItem from="1719246443909" duration="4399000" />
+      <workItem from="1719246443909" duration="15187000" />
     </task>
     <task id="LOCAL-00001" summary="Versao Afonso - falta so algumas verificacoes e testes">
       <created>1719239876530</created>
@@ -138,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719249541590</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Parte Afonso feita- falta testes">
+      <created>1719251118959</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719251118959</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

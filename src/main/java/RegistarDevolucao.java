@@ -185,7 +185,7 @@ public class RegistarDevolucao extends JFrame {
                 }
                 String codigoExemplar = codigoExemplarField.getText();
 
-                // Get the list of Emprestimo objects
+                // Get the list of Emprestimos.Emprestimo objects
                 List<Emprestimo> emprestimos = Emprestimos.getInstance().getEmprestimos();
                 boolean hasEmprestimos = false;
                 // Iterate over the list

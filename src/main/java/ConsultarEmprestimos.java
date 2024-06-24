@@ -110,7 +110,7 @@ public class ConsultarEmprestimos extends JFrame {
                     int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to check this box?", "Confirmation", JOptionPane.YES_NO_OPTION);
                     if (response == JOptionPane.YES_OPTION) {
                         super.setValueAt(aValue, row, column);
-                        // Get the selected Emprestimo and call the devolver() method
+                        // Get the selected Emprestimos.Emprestimo and call the devolver() method
                         Emprestimo selectedEmprestimo = emprestimos.get(row);
                         selectedEmprestimo.devolver();
                         // Update the "Data Devolucao" column in the table
@@ -243,7 +243,7 @@ public class ConsultarEmprestimos extends JFrame {
                     int response = JOptionPane.showConfirmDialog(null, "Tens a certeza que queres confirmar a devolução?", "Confirmation", JOptionPane.YES_NO_OPTION);
                     if (response == JOptionPane.YES_OPTION) {
                         super.setValueAt(aValue, row, column);
-                        // Get the selected Emprestimo and call the devolver() method
+                        // Get the selected Emprestimos.Emprestimo and call the devolver() method
                         Emprestimo selectedEmprestimo = emprestimos.get(row);
                         selectedEmprestimo.devolver();
                         // Update the "Data Devolucao" column in the table

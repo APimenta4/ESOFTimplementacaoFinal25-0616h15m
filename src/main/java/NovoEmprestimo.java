@@ -6,6 +6,9 @@ import java.awt.event.ActionListener;
 import java.time.Year;
 
 public class NovoEmprestimo extends JFrame {
+    public JButton confirmButton;
+    JTextField numeroSocioField;
+    JTextField codigoExemplarField;
     public NovoEmprestimo() {
         setTitle("Empréstimos - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -119,7 +122,7 @@ public class NovoEmprestimo extends JFrame {
 
 
         // Confirm button
-        JButton confirmButton = new JButton("Confirmar empréstimo");
+        confirmButton = new JButton("Confirmar empréstimo");
         confirmButton.setPreferredSize(new Dimension(250, 50)); // Set the preferred width to 200 and height to 50
         confirmButton.setMaximumSize(new Dimension(250, 50)); // Set maximum size for the button
         confirmButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -127,45 +130,19 @@ public class NovoEmprestimo extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Retrieve the Socio with the provided numeroDeSocio
+
                 String numeroDeSocio = numeroSocioField.getText();
-                Socio socio = Socios.getInstance().getSocios().stream()
-                        .filter(s -> String.valueOf(s.getNumeroDeSocio()).equals(numeroDeSocio))
-                        .findFirst()
-                        .orElse(null);
-
-                // Retrieve the Exemplar with the provided codigoExemplar
                 String codigoExemplar = codigoExemplarField.getText();
-                Exemplar exemplar = Exemplares.getInstance().getExemplares().stream()
-                        .filter(ex -> ex.getCodigo().equals(codigoExemplar))
-                        .findFirst()
-                        .orElse(null);
 
-                // If both Socio and Exemplar are found, create a new Emprestimo
-                if (socio != null && exemplar != null) {
-                    if(socio.getAnuidadePaga()<Year.now().getValue()){
-                        JOptionPane.showMessageDialog(null, "O sócio especificado não tem a anuidade paga");
-                        return;
-                    }
-
-                    if((socio.getQuantEmprestimos()>=ValoresPredefinicoes.getInstance().getMaxEmprestimos() && !socio.getMembershipType().equals("Premium")) || (socio.getMembershipType().equals("Premium") && socio.getQuantEmprestimos()>=(ValoresPredefinicoes.getInstance().getMaxEmprestimos()+ValoresPredefinicoes.getInstance().getExtraPremium()))){
-                        JOptionPane.showMessageDialog(null, "O sócio especificado já possui o máximo de empréstimos simultâneos atualmente");
-                        return;
-                    }
-                    Emprestimo emprestimo = new Emprestimo(socio, exemplar);
-                    Emprestimos.getInstance().addEmprestimo(emprestimo);
-                    JOptionPane.showMessageDialog(null, "Empréstimo registado com sucesso");
+                String result = adicionarEmprestimo(numeroDeSocio, codigoExemplar);
+                if(result.equals("Empréstimo registrado com sucesso")) {
+                    JOptionPane.showMessageDialog(null, result);
                     setVisible(false);
                     new JanelaPrincipal().setVisible(true);
-                } else {
-                    StringBuilder errorMessage = new StringBuilder();
-                    if (socio == null) {
-                        errorMessage.append("O sócio especificado não existe  ");
-                    }
-                    if (exemplar == null) {
-                        errorMessage.append("O exemplar especificado não existe");
-                    }
-                    JOptionPane.showMessageDialog(null, errorMessage.toString());
+                    return;
                 }
+                JOptionPane.showMessageDialog(null, result);
+
             }
         });
 
@@ -173,6 +150,41 @@ public class NovoEmprestimo extends JFrame {
         mainPanel.add(confirmButton);
 
         add(mainPanel, BorderLayout.CENTER);
+    }
+
+    protected String adicionarEmprestimo(String numeroDeSocio, String codigoExemplar) {
+
+        Socio socio = Socios.getInstance().getSocios().stream().filter(s -> String.valueOf(s.getNumeroDeSocio()).equals(numeroDeSocio)).findFirst().orElse(null);
+        Exemplar exemplar = Exemplares.getInstance().getExemplares().stream().filter(ex -> ex.getCodigo().equals(codigoExemplar)).findFirst().orElse(null);
+
+        String message = ""; // Initialize an empty string for the message
+
+        // If both Socio and Exemplar are found, create a new Emprestimos.Emprestimo
+        if (socio != null && exemplar != null) {
+            if (socio.getAnuidadePaga() < Year.now().getValue()) {
+                message = "O sócio especificado não tem a anuidade paga";
+            } else if ((socio.getQuantEmprestimos() >= ValoresPredefinicoes.getInstance().getMaxEmprestimos() && !socio.getMembershipType().equals("Premium"))
+                    || (socio.getMembershipType().equals("Premium") && socio.getQuantEmprestimos() >= (ValoresPredefinicoes.getInstance().getMaxEmprestimos() + ValoresPredefinicoes.getInstance().getExtraPremium()))) {
+                message = "O sócio especificado já possui o máximo de empréstimos simultâneos atualmente";
+            } else if(exemplar.isEmprestado()){
+                message = "O exemplar especificado já está emprestado";
+            }else {
+                Emprestimo emprestimo = new Emprestimo(socio, exemplar);
+                Emprestimos.getInstance().addEmprestimo(emprestimo);
+                message = "Empréstimo registrado com sucesso";
+            }
+        } else {
+            StringBuilder errorMessage = new StringBuilder();
+            if (socio == null) {
+                errorMessage.append("O sócio especificado não existe  ");
+            }
+            if (exemplar == null) {
+                errorMessage.append("O exemplar especificado não existe");
+            }
+            message = errorMessage.toString();
+        }
+        // Return the message string
+        return message;
     }
 
 

@@ -129,16 +129,16 @@ public class ConsultarEmprestimosSocio extends JFrame {
                     return;
                 }
 
-                // Check if the Socio has any Emprestimo
+                // Check if the Socio has any Emprestimos.Emprestimo
                 boolean hasEmprestimo = false;
-                for (Emprestimo emprestimo : emprestimos) { // Assuming 'emprestimos' is the list of all Emprestimo objects
+                for (Emprestimo emprestimo : emprestimos) { // Assuming 'emprestimos' is the list of all Emprestimos.Emprestimo objects
                     if (emprestimo.getSocio().equals(socio)) {
                         hasEmprestimo = true;
                         break;
                     }
                 }
 
-                // If the Socio doesn't have any Emprestimo, show an error message
+                // If the Socio doesn't have any Emprestimos.Emprestimo, show an error message
                 if (!hasEmprestimo) {
                     JOptionPane.showMessageDialog(null, "O sócio especificado não possui empréstimos");
                     return;
