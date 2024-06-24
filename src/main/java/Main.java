@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                Socio socio1 = new Socio("João", "sms", "Premium");
+                Socio socio1 = new Socio("João", "sms", "Normal");
                 Socio socio2 = new Socio("Tomas", "sms", "Premium");
                 Socio socio3 = new Socio("Maria", "sms", "Premium");
                 Socio socio4 = new Socio("Antonia", "sms", "Premium", 2023); // Sócio sem anuidade paga
@@ -39,12 +39,14 @@ public class Main {
                 Exemplar exemplar4 = new Exemplar("123", "4", "Afonso Pimenta3", "Drama", editora1, "2020", "464", "P1/E5");
                 Exemplar exemplar5 = new Exemplar("123", "LivroOcupado1", "Afonso Pimenta3", "Drama", editora1, "2020", "7", "P1/E5");
                 Exemplar exemplar6 = new Exemplar("123", "LivroOcupado2", "Afonso Pimenta3", "Drama", editora1, "2020", "1", "P1/E5");
+                Exemplar exemplar7 = new Exemplar("123", "LivroExtra1", "Afonso Pimenta3", "Drama", editora1, "2020", "1", "P1/E5");
                 Exemplares.getInstance().addExemplar(exemplar1);
                 Exemplares.getInstance().addExemplar(exemplar2);
                 Exemplares.getInstance().addExemplar(exemplar3);
                 Exemplares.getInstance().addExemplar(exemplar4);
                 Exemplares.getInstance().addExemplar(exemplar5);
                 Exemplares.getInstance().addExemplar(exemplar6);
+                Exemplares.getInstance().addExemplar(exemplar7);
 
                 Aquisicao aquisicao1 = new Aquisicao(exemplar1, distribuidor2);
                 Aquisicao aquisicao2 = new Aquisicao(exemplar3, distribuidor3);
@@ -58,11 +60,13 @@ public class Main {
                 Emprestimo emprestimo3 = new Emprestimo(socio3, exemplar1);
                 Emprestimo emprestimo4 = new Emprestimo(socio5, exemplar5);
                 Emprestimo emprestimo5 = new Emprestimo(socio5, exemplar6);
+                Emprestimo emprestimo6 = new Emprestimo(socio1, exemplar7);
                 Emprestimos.getInstance().addEmprestimo(emprestimo1);
                 Emprestimos.getInstance().addEmprestimo(emprestimo2);
                 Emprestimos.getInstance().addEmprestimo(emprestimo3);
                 Emprestimos.getInstance().addEmprestimo(emprestimo4);
                 Emprestimos.getInstance().addEmprestimo(emprestimo5);
+                Emprestimos.getInstance().addEmprestimo(emprestimo6);
 
                 new JanelaPrincipal().setVisible(true);
             }

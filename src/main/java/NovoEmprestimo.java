@@ -147,7 +147,8 @@ public class NovoEmprestimo extends JFrame {
                         JOptionPane.showMessageDialog(null, "O sócio especificado não tem a anuidade paga");
                         return;
                     }
-                    if(socio.getQuantEmprestimos()>=ValoresPredefinicoes.getInstance().getMaxEmprestimos()){
+
+                    if((socio.getQuantEmprestimos()>=ValoresPredefinicoes.getInstance().getMaxEmprestimos() && !socio.getMembershipType().equals("Premium")) || (socio.getMembershipType().equals("Premium") && socio.getQuantEmprestimos()>=(ValoresPredefinicoes.getInstance().getMaxEmprestimos()+ValoresPredefinicoes.getInstance().getExtraPremium()))){
                         JOptionPane.showMessageDialog(null, "O sócio especificado já possui o máximo de empréstimos simultâneos atualmente");
                         return;
                     }

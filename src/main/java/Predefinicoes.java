@@ -117,6 +117,20 @@ public class Predefinicoes extends JFrame {
         anuidadePremiumField.setFont(textFieldFont);
         settingsPanel.add(anuidadePremiumField, gbc);
 
+        gbc.gridx = 0;
+        gbc.gridy = 5;
+        gbc.weightx = 0.3;
+        JLabel emprestimosExtraPremiumLabel = new JLabel("Empréstimos simultâneos extra (Sócios Premium)");
+        emprestimosExtraPremiumLabel.setFont(labelFont);
+        settingsPanel.add(emprestimosExtraPremiumLabel, gbc);
+        gbc.gridx = 1;
+        gbc.weightx = 0.7;
+        JTextField emprestimosExtraPremiumField = new JTextField(String.valueOf(valoresPredefinicoes.getExtraPremium()));
+        emprestimosExtraPremiumField.setFont(textFieldFont);
+        settingsPanel.add(emprestimosExtraPremiumField, gbc);
+
+
+
         mainPanel.add(settingsPanel);
 
 
@@ -142,6 +156,7 @@ public class Predefinicoes extends JFrame {
                     int multaDia = Integer.parseInt(multaDiaText);
                     int anuidadeNormal = Integer.parseInt(anuidadeNormalText);
                     int anuidadePremium = Integer.parseInt(anuidadePremiumText);
+                    int extraPremium = Integer.parseInt(emprestimosExtraPremiumField.getText());
 
                     // Set the values in ValoresPredefinicoes
                     ValoresPredefinicoes valoresPredefinicoes = ValoresPredefinicoes.getInstance();
@@ -150,6 +165,7 @@ public class Predefinicoes extends JFrame {
                     valoresPredefinicoes.setMultaDia(multaDia);
                     valoresPredefinicoes.setAnuidadeNormal(anuidadeNormal);
                     valoresPredefinicoes.setAnuidadePremium(anuidadePremium);
+                    valoresPredefinicoes.setExtraPremium(extraPremium);
 
                     // Show a success message
                     JOptionPane.showMessageDialog(null, "Definições alteradas com sucesso");

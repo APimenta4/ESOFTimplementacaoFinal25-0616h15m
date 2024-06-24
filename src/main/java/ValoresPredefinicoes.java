@@ -5,6 +5,7 @@ public class ValoresPredefinicoes {
     private int multaDia;
     private int anuidadeNormal;
     private int anuidadePremium;
+    private int extraPremium;  // número de empréstimos extra que um sócio premium pode fazer
 
     private ValoresPredefinicoes() {
         // Initialize with default values
@@ -13,6 +14,7 @@ public class ValoresPredefinicoes {
         multaDia = 5;
         anuidadeNormal = 120;
         anuidadePremium = 150;
+        extraPremium = 2;
     }
 
     public static synchronized ValoresPredefinicoes getInstance() {
@@ -22,7 +24,17 @@ public class ValoresPredefinicoes {
         return instance;
     }
 
-    // Getters and setters for each field
+
+
+    public int getExtraPremium() {
+        return extraPremium;
+    }
+
+    public void setExtraPremium(int extraPremium) {
+        this.extraPremium = extraPremium;
+    }
+
+
     public int getDiasEmprestimo() {
         return diasEmprestimo;
     }
