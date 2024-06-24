@@ -25,20 +25,20 @@ public class Main {
                 Editoras.getInstance().addEditora(editora2);
                 Editoras.getInstance().addEditora(editora3);
 
-                Distribuidor distribuidor1 = new Distribuidor("fixe1");
-                Distribuidor distribuidor2 = new Distribuidor("fixe2");
-                Distribuidor distribuidor3 = new Distribuidor("fixe3");
+                Distribuidor distribuidor1 = new Distribuidor("d1");
+                Distribuidor distribuidor2 = new Distribuidor("d2");
+                Distribuidor distribuidor3 = new Distribuidor("d3");
                 Distribuidores.getInstance().addDistribuidor(distribuidor1);
                 Distribuidores.getInstance().addDistribuidor(distribuidor2);
                 Distribuidores.getInstance().addDistribuidor(distribuidor3);
 
                 // A implementação da organização dos códigos de cada livro fica ao critério do utilizador, contudo, têm de ser únicos
-                Exemplar exemplar1 = new Exemplar("123", "1", "Afonso Pimenta1", "Drama", editora3, "2020", "444", "P1/E5");
-                Exemplar exemplar2 = new Exemplar("123", "2", "Afonso Pimenta2", "Drama", editora2, "2020", "444", "P1/E5");
-                Exemplar exemplar3 = new Exemplar("123", "3", "Afonso Pimenta3", "Drama", editora1, "2020", "444", "P1/E5");
-                Exemplar exemplar4 = new Exemplar("123", "4", "Afonso Pimenta3", "Drama", editora1, "2020", "444", "P1/E5");
-                Exemplar exemplar5 = new Exemplar("123", "LivroOcupado1", "Afonso Pimenta3", "Drama", editora1, "2020", "444", "P1/E5");
-                Exemplar exemplar6 = new Exemplar("123", "LivroOcupado2", "Afonso Pimenta3", "Drama", editora1, "2020", "444", "P1/E5");
+                Exemplar exemplar1 = new Exemplar("123", "1", "Afonso Pimenta1", "Drama - Ação", editora3, "2020", "424", "P1/E5");
+                Exemplar exemplar2 = new Exemplar("123", "2", "Afonso Pimenta2", "Drama", editora2, "2020", "414", "P1/E5");
+                Exemplar exemplar3 = new Exemplar("123", "3", "Afonso Pimenta3", "Drama", editora1, "2020", "454", "P1/E5");
+                Exemplar exemplar4 = new Exemplar("123", "4", "Afonso Pimenta3", "Drama", editora1, "2020", "464", "P1/E5");
+                Exemplar exemplar5 = new Exemplar("123", "LivroOcupado1", "Afonso Pimenta3", "Drama", editora1, "2020", "7", "P1/E5");
+                Exemplar exemplar6 = new Exemplar("123", "LivroOcupado2", "Afonso Pimenta3", "Drama", editora1, "2020", "1", "P1/E5");
                 Exemplares.getInstance().addExemplar(exemplar1);
                 Exemplares.getInstance().addExemplar(exemplar2);
                 Exemplares.getInstance().addExemplar(exemplar3);

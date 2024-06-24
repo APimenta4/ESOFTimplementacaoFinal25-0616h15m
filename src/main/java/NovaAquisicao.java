@@ -3,7 +3,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.util.List;
 public class NovaAquisicao extends JFrame {
     public NovaAquisicao() {
         setTitle("Registar Nova Aquisição - BIBLIOTECH");
@@ -199,18 +199,28 @@ public class NovaAquisicao extends JFrame {
 
         JButton addEditoraButton = new JButton("+");
         addEditoraButton.setFont(labelFont);
+        addEditoraButton.setFocusPainted(false);
         addEditoraButton.setPreferredSize(new Dimension(50, 40));
         addEditoraButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String newEditoraName = JOptionPane.showInputDialog("Enter new Editora name:");
-                if (newEditoraName != null && !newEditoraName.trim().isEmpty()) {
-                    Editora newEditora = new Editora(newEditoraName);
-                    Editoras.getInstance().addEditora(newEditora);
-                    editoraComboBox.addItem(newEditora);
-                    editoraComboBox.setSelectedItem(newEditora);
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String newEditoraName = JOptionPane.showInputDialog("Introduza o nome da nova editora:");
+            if (newEditoraName != null && !newEditoraName.trim().isEmpty()) {
+                // Check if the newEditoraName is unique among Editoras
+                List<Editora> editoras = Editoras.getInstance().getEditoras();
+                for (Editora editora : editoras) {
+                    if (editora.getName().equals(newEditoraName)) {
+                        JOptionPane.showMessageDialog(null, "O nome da editora especificado já existe");
+                        return;
+                    }
                 }
+                // If the newEditoraName is unique, create a new Editora
+                Editora newEditora = new Editora(newEditoraName);
+                Editoras.getInstance().addEditora(newEditora);
+                editoraComboBox.addItem(newEditora);
+                editoraComboBox.setSelectedItem(newEditora);
             }
+        }
         });
 
         // Update the gridx and gridy properties of gbc for the button
@@ -247,18 +257,28 @@ public class NovaAquisicao extends JFrame {
         // Add button below the dropdown
         JButton addDistribuidorButton = new JButton("+");
         addDistribuidorButton.setFont(labelFont);
+        addDistribuidorButton.setFocusPainted(false);
         addDistribuidorButton.setPreferredSize(new Dimension(50, 40));
         addDistribuidorButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String newDistribuidorName = JOptionPane.showInputDialog("Enter new Distribuidor name:");
-                if (newDistribuidorName != null && !newDistribuidorName.trim().isEmpty()) {
-                    Distribuidor newDistribuidor = new Distribuidor(newDistribuidorName);
-                    Distribuidores.getInstance().addDistribuidor(newDistribuidor);
-                    distribuidorComboBox.addItem(newDistribuidor);
-                    distribuidorComboBox.setSelectedItem(newDistribuidor);
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String newDistribuidorName = JOptionPane.showInputDialog("Introduza o nome do novo distribuidor:");
+            if (newDistribuidorName != null && !newDistribuidorName.trim().isEmpty()) {
+                // Check if the newDistribuidorName is unique among Distribuidores
+                List<Distribuidor> distribuidores = Distribuidores.getInstance().getDistribuidores();
+                for (Distribuidor distribuidor : distribuidores) {
+                    if (distribuidor.getName().equals(newDistribuidorName)) {
+                        JOptionPane.showMessageDialog(null, "O nome do distribuidor especificado já existe");
+                        return;
+                    }
                 }
+                // If the newDistribuidorName is unique, create a new Distribuidor
+                Distribuidor newDistribuidor = new Distribuidor(newDistribuidorName);
+                Distribuidores.getInstance().addDistribuidor(newDistribuidor);
+                distribuidorComboBox.addItem(newDistribuidor);
+                distribuidorComboBox.setSelectedItem(newDistribuidor);
             }
+        }
         });
 
         // Update the gridx and gridy properties of gbc for the button
@@ -277,7 +297,6 @@ public class NovaAquisicao extends JFrame {
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO validacoes
                 // Retrieve the values from the text fields
                 String titulo = tituloField.getText();
                 String autores = autoresField.getText();
@@ -289,9 +308,27 @@ public class NovaAquisicao extends JFrame {
                 Editora editora = (Editora) editoraComboBox.getSelectedItem();
                 Distribuidor distribuidor = (Distribuidor) distribuidorComboBox.getSelectedItem();
 
+                // Check if any field is empty
+                if (titulo.isEmpty() || autores.isEmpty() || edicaoAno.isEmpty() || codigo.isEmpty() || genero.isEmpty() || prateleira.isEmpty() || isbn.isEmpty() || editora == null || distribuidor == null) {
+                    JOptionPane.showMessageDialog(null, "Todos os campos são obrigatórios");
+                    return;
+                }
+
+                // Check if the codigo and isbn are unique among Exemplares
+                List<Exemplar> exemplares = Exemplares.getInstance().getExemplares();
+                for (Exemplar exemplar : exemplares) {
+                    if (exemplar.getCodigo().equals(codigo)) {
+                        JOptionPane.showMessageDialog(null, "O código especificado já existe.");
+                        return;
+                    }
+                    if (exemplar.getIsbn().equals(isbn)) {
+                        JOptionPane.showMessageDialog(null, "O ISBN especificado já existe.");
+                        return;
+                    }
+                }
+
                 // Create a new Exemplar object
                 Exemplar exemplar = new Exemplar(titulo, codigo, autores, genero, editora, edicaoAno, isbn, prateleira);
-
 
                 // Create a new Aquisicao object and add it to the Aquisicoes instance
                 Aquisicao aquisicao = new Aquisicao(exemplar, distribuidor);

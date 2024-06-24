@@ -23,6 +23,7 @@ public class Emprestimo {
     public void devolver() {
         this.devolvido = true;
         this.dataDeDevolucao = new Date();
+        this.exemplar.setEmprestado(false);
         this.socio.decQuantEmprestimos();
         if (this.dataDeDevolucao.after(this.dataLimite)) {
             long diff = this.dataDeDevolucao.getTime() - this.dataLimite.getTime();

@@ -20,8 +20,8 @@ public class Emprestimos {
         if(emprestimo.getExemplar().isEmprestado()){
             throw new IllegalArgumentException("O exemplar já está emprestado");
         }
-        emprestimos.add(emprestimo);
         emprestimo.getExemplar().setEmprestado(true);
+        emprestimos.add(emprestimo);
         emprestimo.getSocio().incQuantEmprestimos();
     }
 

@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+
 public class RegistarDevolucao extends JFrame {
     public RegistarDevolucao() {
         setTitle("Registar Devolução - BIBLIOTECH");
@@ -159,11 +160,26 @@ public class RegistarDevolucao extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Retrieve the text from the text fields
-                // TODO: Verificacoes adicionais (ver caso de uso)
                 int numeroSocio;
+                List<Socio> socios = Socios.getInstance().getSocios();
                 try {
                     numeroSocio = Integer.parseInt(numeroSocioField.getText());
                 } catch (NumberFormatException e2) {
+                    JOptionPane.showMessageDialog(null, "O número de sócio especificado é inválido.");
+                    return;
+                }
+
+                // Find the Socio with the given number
+                Socio socio = null;
+                for (Socio s : socios) {
+                    if (s.getNumeroDeSocio() == numeroSocio) {
+                        socio = s;
+                        break;
+                    }
+                }
+
+                // If no Socio was found, show an error message
+                if (socio == null) {
                     JOptionPane.showMessageDialog(null, "O sócio especificado não existe");
                     return;
                 }
@@ -171,19 +187,26 @@ public class RegistarDevolucao extends JFrame {
 
                 // Get the list of Emprestimo objects
                 List<Emprestimo> emprestimos = Emprestimos.getInstance().getEmprestimos();
-
+                boolean hasEmprestimos = false;
                 // Iterate over the list
                 for (Emprestimo emprestimo : emprestimos) {
                     // Check if the Socio's number and Exemplar's code match the retrieved text
-                    if (emprestimo.getSocio().getNumeroDeSocio()==numeroSocio && emprestimo.getExemplar().getCodigo().equals(codigoExemplar)) {
-                        // Register the return and show a success message
-                        emprestimo.devolver();
-                        JOptionPane.showMessageDialog(null, "Empréstimo devolvido com sucesso");
-                        // return to JanelaPrincipal
-                        setVisible(false);
-                        new JanelaPrincipal().setVisible(true);
-
+                    if (emprestimo.getSocio().getNumeroDeSocio() == numeroSocio && !emprestimo.isDevolvido()) {
+                        hasEmprestimos = true;
+                        if (emprestimo.getExemplar().getCodigo().equals(codigoExemplar)) {
+                            // Register the return and show a success message
+                            emprestimo.devolver();
+                            JOptionPane.showMessageDialog(null, "Empréstimo devolvido com sucesso");
+                            // return to JanelaPrincipal
+                            setVisible(false);
+                            new JanelaPrincipal().setVisible(true);
+                            return;
+                        }
                     }
+                }
+                if (!hasEmprestimos) {
+                    JOptionPane.showMessageDialog(null, "O sócio especificado não possui empréstimos em aberto");
+                    return;
                 }
 
                 // If no match was found, show an error message

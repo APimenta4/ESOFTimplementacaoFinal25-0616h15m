@@ -8,7 +8,7 @@ public class Socio {
     private String contactType; // "sms" or "email"           //Isto pode ser trocado por um boolean "prefereSms" (true = sms/false = email)
     private String membershipType; // "Premium" or "Normal"   //Isto pode ser trocado por um boolean "isPremium" (true = premium/false = normal)
     private String nif;
-    private int quantEmprestimos;
+    private int quantEmprestimos;  // quantidade empréstimos atuais
     private int anuidadePaga;     //assume-se que quando um sócio é criado, a anuidade é logo paga
                                   //este atributo guarda o inteiro do último ano que a anuidade foi paga
                                   //"anuidadePaga = 2024" significa que a anuidade de 2024 foi paga
