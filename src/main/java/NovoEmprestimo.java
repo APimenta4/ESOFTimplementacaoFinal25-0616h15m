@@ -102,7 +102,6 @@ public class NovoEmprestimo extends JFrame {
         formPanel.add(errorMessageLabel, gbc);
 
 
-
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.weightx = 0.3;

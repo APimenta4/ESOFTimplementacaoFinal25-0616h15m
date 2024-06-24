@@ -4,11 +4,11 @@ public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                Socio socio1 = new Socio("João", "sms", "Normal");
+                Socio socio1 = new Socio("João", "sms", "Normal"); // Sócio com o número máximo de empréstimos (2)
                 Socio socio2 = new Socio("Tomas", "sms", "Premium");
                 Socio socio3 = new Socio("Maria", "sms", "Premium");
                 Socio socio4 = new Socio("Antonia", "sms", "Premium", 2023); // Sócio sem anuidade paga
-                Socio socio5 = new Socio("Antonio", "sms", "Premium"); // Sócio com o número máximo de empréstimos (2)
+                Socio socio5 = new Socio("Antonio", "sms", "Premium"); // Sócio com o número máximo de empréstimos (2) mas premium
                 Socio socio6 = new Socio("Rodrigo", "sms", "Premium"); // Sócio sem empréstimos
 
                 Socios.getInstance().addSocio(socio1);

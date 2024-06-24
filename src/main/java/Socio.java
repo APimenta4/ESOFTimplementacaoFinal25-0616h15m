@@ -7,6 +7,7 @@ public class Socio {
     private String name;
     private String contactType; // "sms" or "email"           //Isto pode ser trocado por um boolean "prefereSms" (true = sms/false = email)
     private String membershipType; // "Premium" or "Normal"   //Isto pode ser trocado por um boolean "isPremium" (true = premium/false = normal)
+                                                              //Deste modo, permite que o código seja modular para novos tipos de utilizadores no futuro
     private String nif;
     private int quantEmprestimos;  // quantidade empréstimos atuais
     private int anuidadePaga;     //assume-se que quando um sócio é criado, a anuidade é logo paga

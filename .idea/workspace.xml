@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5916bcdf-e307-435a-9721-0765483fbccb" name="Changes" comment="Parte Afonso feita- falta testes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/NovoEmprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NovoEmprestimo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Predefinicoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Predefinicoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ValoresPredefinicoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ValoresPredefinicoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Socio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +108,7 @@
       <workItem from="1719147371411" duration="14921000" />
       <workItem from="1719214590442" duration="8333000" />
       <workItem from="1719223132346" duration="21610000" />
-      <workItem from="1719246443909" duration="2778000" />
+      <workItem from="1719246443909" duration="4399000" />
     </task>
     <task id="LOCAL-00001" summary="Versao Afonso - falta so algumas verificacoes e testes">
       <created>1719239876530</created>
@@ -133,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719244232344</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Parte Afonso feita- falta testes">
+      <created>1719249541590</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719249541590</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
