@@ -6,13 +6,14 @@ import java.awt.event.ActionListener;
 import java.util.List;
 public class NovaAquisicao extends JFrame {
     public NovaAquisicao() {
+        // Layout da página
         setTitle("Registar Nova Aquisição - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(1280, 720);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Top panel with "BIBLIOTECH" label and navigation
+
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -33,12 +34,11 @@ public class NovaAquisicao extends JFrame {
         JPanel navigationPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel backLabel = new JLabel("← ");
         backLabel.setFont(new Font("Serif", Font.BOLD, 50));
-        backLabel.setForeground(new Color(51, 153, 255)); // Blue color
+        backLabel.setForeground(new Color(51, 153, 255));
         backLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        backLabel.setBorder(new EmptyBorder(0, 25, 0, 0)); // Add left margin
+        backLabel.setBorder(new EmptyBorder(0, 25, 0, 0));
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                // Handle back click
                 setVisible(false);
                 new MenuAquisicoes().setVisible(true);
             }
@@ -48,7 +48,7 @@ public class NovaAquisicao extends JFrame {
         JLabel aquisicoesLabel = new JLabel("Aquisições/");
         aquisicoesLabel.setFont(new Font("Serif", Font.BOLD, 25));
         aquisicoesLabel.setForeground(new Color(51, 153, 255));
-        aquisicoesLabel.setBorder(new EmptyBorder(0, 10, 0, 0)); // Add left margin
+        aquisicoesLabel.setBorder(new EmptyBorder(0, 10, 0, 0));
         navigationPanel.add(aquisicoesLabel);
 
         JLabel registarLabel = new JLabel("Registar nova aquisição");
@@ -60,16 +60,15 @@ public class NovaAquisicao extends JFrame {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Main panel
+        // Conteúdo
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // Replace the current font declarations
+
         Font labelFont = new Font("Arial", Font.PLAIN, 20);
         Font textFieldFont = new Font("Arial", Font.PLAIN, 20);
 
-        // Labels and text fields
         JPanel formPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
@@ -173,7 +172,7 @@ public class NovaAquisicao extends JFrame {
         isbnField.setPreferredSize(new Dimension(300, 40));
         formPanel.add(isbnField, gbc);
 
-        // Publisher
+        // Editora
         gbc.gridx = 2;
         gbc.gridy = 2;
         gbc.weightx = 0.3;
@@ -187,11 +186,9 @@ public class NovaAquisicao extends JFrame {
         editoraComboBox.setPreferredSize(new Dimension(300, 40));
         formPanel.add(editoraComboBox, gbc);
 
-        // Add button below the dropdown
         JLabel addEditoraLabel = new JLabel("Adicionar editora");
         addEditoraLabel.setFont(labelFont);
 
-        // Update the gridx and gridy properties of gbc for the label
         gbc.gridx = 2;
         gbc.gridy = 3;
 
@@ -206,7 +203,6 @@ public class NovaAquisicao extends JFrame {
         public void actionPerformed(ActionEvent e) {
             String newEditoraName = JOptionPane.showInputDialog("Introduza o nome da nova editora:");
             if (newEditoraName != null && !newEditoraName.trim().isEmpty()) {
-                // Check if the newEditoraName is unique among Editoras
                 List<Editora> editoras = Editoras.getInstance().getEditoras();
                 for (Editora editora : editoras) {
                     if (editora.getName().equals(newEditoraName)) {
@@ -214,7 +210,6 @@ public class NovaAquisicao extends JFrame {
                         return;
                     }
                 }
-                // If the newEditoraName is unique, create a new Editora
                 Editora newEditora = new Editora(newEditoraName);
                 Editoras.getInstance().addEditora(newEditora);
                 editoraComboBox.addItem(newEditora);
@@ -223,14 +218,13 @@ public class NovaAquisicao extends JFrame {
         }
         });
 
-        // Update the gridx and gridy properties of gbc for the button
         gbc.gridx = 3;
         gbc.gridy = 3;
 
         formPanel.add(addEditoraButton, gbc);
 
 
-        // Distributor
+        // Distribuidor
         gbc.gridx = 4;
         gbc.gridy = 2;
         gbc.weightx = 0.3;
@@ -244,17 +238,14 @@ public class NovaAquisicao extends JFrame {
         distribuidorComboBox.setPreferredSize(new Dimension(300, 40));
         formPanel.add(distribuidorComboBox, gbc);
 
-        // Add label "Adicionar distribuidor" below the dropdown
         JLabel addDistribuidorLabel = new JLabel("Adicionar distribuidor");
         addDistribuidorLabel.setFont(labelFont);
 
-        // Update the gridx and gridy properties of gbc for the label
         gbc.gridx = 4;
         gbc.gridy = 3;
 
         formPanel.add(addDistribuidorLabel, gbc);
 
-        // Add button below the dropdown
         JButton addDistribuidorButton = new JButton("+");
         addDistribuidorButton.setFont(labelFont);
         addDistribuidorButton.setFocusPainted(false);
@@ -264,7 +255,6 @@ public class NovaAquisicao extends JFrame {
         public void actionPerformed(ActionEvent e) {
             String newDistribuidorName = JOptionPane.showInputDialog("Introduza o nome do novo distribuidor:");
             if (newDistribuidorName != null && !newDistribuidorName.trim().isEmpty()) {
-                // Check if the newDistribuidorName is unique among Distribuidores
                 List<Distribuidor> distribuidores = Distribuidores.getInstance().getDistribuidores();
                 for (Distribuidor distribuidor : distribuidores) {
                     if (distribuidor.getName().equals(newDistribuidorName)) {
@@ -272,7 +262,6 @@ public class NovaAquisicao extends JFrame {
                         return;
                     }
                 }
-                // If the newDistribuidorName is unique, create a new Distribuidor
                 Distribuidor newDistribuidor = new Distribuidor(newDistribuidorName);
                 Distribuidores.getInstance().addDistribuidor(newDistribuidor);
                 distribuidorComboBox.addItem(newDistribuidor);
@@ -281,7 +270,6 @@ public class NovaAquisicao extends JFrame {
         }
         });
 
-        // Update the gridx and gridy properties of gbc for the button
         gbc.gridx = 5;
         gbc.gridy = 3;
 
@@ -289,15 +277,13 @@ public class NovaAquisicao extends JFrame {
 
         mainPanel.add(formPanel);
 
-        // Confirm button
         JButton confirmButton = new JButton("Confirmar aquisição");
-        confirmButton.setPreferredSize(new Dimension(250, 50)); // Set the preferred width to 200 and height to 50
-        confirmButton.setMaximumSize(new Dimension(250, 50)); // Set maximum size for the button
+        confirmButton.setPreferredSize(new Dimension(250, 50));
+        confirmButton.setMaximumSize(new Dimension(250, 50));
         confirmButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Retrieve the values from the text fields
                 String titulo = tituloField.getText();
                 String autores = autoresField.getText();
                 String edicaoAno = edicaoAnoField.getText();
@@ -308,7 +294,6 @@ public class NovaAquisicao extends JFrame {
                 Editora editora = (Editora) editoraComboBox.getSelectedItem();
                 Distribuidor distribuidor = (Distribuidor) distribuidorComboBox.getSelectedItem();
 
-                // Call the registarAquisicao method
                 String result = registarAquisicao(titulo, autores, edicaoAno, codigo, genero, prateleira, isbn, editora, distribuidor);
 
                 if(result.equals("Aquisição registada com sucesso")) {
@@ -324,7 +309,7 @@ public class NovaAquisicao extends JFrame {
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(confirmButton);
 
-        mainPanel.add(Box.createRigidArea(new Dimension(0, 20))); // Add vertical spacing
+        mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
         mainPanel.add(buttonPanel);
 
         add(mainPanel, BorderLayout.CENTER);
@@ -335,7 +320,7 @@ public class NovaAquisicao extends JFrame {
         if (titulo.isEmpty() || autores.isEmpty() || edicaoAno.isEmpty() || codigo.isEmpty() || genero.isEmpty() || prateleira.isEmpty() || isbn.isEmpty() || editora == null || distribuidor == null) {
             return "Todos os campos são obrigatórios";
         }
-        // Check if the codigo and isbn are unique among Exemplares
+
         List<Exemplar> exemplares = Exemplares.getInstance().getExemplares();
         for (Exemplar exemplar : exemplares) {
             if (exemplar.getCodigo().equals(codigo)) {
@@ -346,28 +331,28 @@ public class NovaAquisicao extends JFrame {
             }
         }
 
-        // Create a new Exemplar object
+
         Exemplar exemplar = new Exemplar(titulo, codigo, autores, genero, editora, edicaoAno, isbn, prateleira);
 
-        // Create a new Aquisicao object and add it to the Aquisicoes instance
+
         Aquisicao aquisicao = new Aquisicao(exemplar, distribuidor);
         Aquisicoes.getInstance().addAquisicao(aquisicao);
 
-        // Show a success message
+
         return "Aquisição registada com sucesso";
 
     }
 
     protected String newEditora(String newEditoraName){
         if (newEditoraName != null && !newEditoraName.trim().isEmpty()) {
-            // Check if the newEditoraName is unique among Editoras
+
             List<Editora> editoras = Editoras.getInstance().getEditoras();
             for (Editora editora : editoras) {
                 if (editora.getName().equals(newEditoraName)) {
                     return "O nome da editora especificado já existe";
                 }
             }
-            // If the newEditoraName is unique, create a new Editora
+
             Editora newEditora = new Editora(newEditoraName);
             Editoras.getInstance().addEditora(newEditora);
             return "Editora adicionada com sucesso";
@@ -379,14 +364,14 @@ public class NovaAquisicao extends JFrame {
 
     protected String newDistribuidor(String newDistribuidorName){
         if (newDistribuidorName != null && !newDistribuidorName.trim().isEmpty()) {
-            // Check if the newDistribuidorName is unique among Distribuidores
+
             List<Distribuidor> distribuidores = Distribuidores.getInstance().getDistribuidores();
             for (Distribuidor distribuidor : distribuidores) {
                 if (distribuidor.getName().equals(newDistribuidorName)) {
                     return "O nome do distribuidor especificado já existe";
                 }
             }
-            // If the newDistribuidorName is unique, create a new Distribuidor
+
             Distribuidor newDistribuidor = new Distribuidor(newDistribuidorName);
             Distribuidores.getInstance().addDistribuidor(newDistribuidor);
             return "Distribuidor adicionado com sucesso";

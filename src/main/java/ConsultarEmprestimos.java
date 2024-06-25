@@ -10,13 +10,13 @@ import java.util.stream.Collectors;
 
 public class ConsultarEmprestimos extends JFrame {
     public ConsultarEmprestimos() {
+        // Layout da página
         setTitle("Consultar Empréstimos - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(1280, 720);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Top panel with "BIBLIOTECH" label and navigation
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -42,7 +42,6 @@ public class ConsultarEmprestimos extends JFrame {
         backLabel.setBorder(new EmptyBorder(0, 25, 0, 0)); // Add left margin
         backLabel.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
-                // Handle back click
                 setVisible(false);
                 new MenuEmprestimos().setVisible(true);
             }
@@ -64,17 +63,17 @@ public class ConsultarEmprestimos extends JFrame {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Main panel with table
+        // Conteúdo
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // Table
+        // Criar e preencher a tabela
         String[] columnNames = {"Exemplar", "Título", "Número de Sócio", "Data Empréstimo", "Data Devolução", "Devolvido"};
-        // Fetch the list of Emprestimos
+
         List<Emprestimo> emprestimos = Emprestimos.getInstance().getEmprestimos();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        // Convert the list of Emprestimos into a 2D Object array
+
         Object[][] data = new Object[emprestimos.size()][6];
         for (int i = 0; i < emprestimos.size(); i++) {
             Emprestimo emprestimo = emprestimos.get(i);
@@ -95,10 +94,10 @@ public class ConsultarEmprestimos extends JFrame {
 
             @Override
             public boolean isCellEditable(int row, int column) {
-                // Only allow editing in the "check" column
+                // Só se pode editar a coluna 5
                 if (column == 5) {
                     Boolean isChecked = (Boolean) getValueAt(row, column);
-                    return !isChecked; // If the checkbox is already checked, don't allow further interaction
+                    return !isChecked;
                 }
                 return false;
             }
@@ -106,14 +105,11 @@ public class ConsultarEmprestimos extends JFrame {
             @Override
             public void setValueAt(Object aValue, int row, int column) {
                 if (column == 5 && aValue instanceof Boolean && (Boolean) aValue == true) {
-                    // If the checkbox is not checked, show a confirmation dialog before allowing to check it
                     int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to check this box?", "Confirmation", JOptionPane.YES_NO_OPTION);
                     if (response == JOptionPane.YES_OPTION) {
                         super.setValueAt(aValue, row, column);
-                        // Get the selected Emprestimos.Emprestimo and call the devolver() method
                         Emprestimo selectedEmprestimo = emprestimos.get(row);
                         selectedEmprestimo.devolver();
-                        // Update the "Data Devolucao" column in the table
                         super.setValueAt(dateFormat.format(selectedEmprestimo.getDataDeDevolucao()), row, 4);
                     }
                 } else {
@@ -137,7 +133,7 @@ public class ConsultarEmprestimos extends JFrame {
     }
 
 
-
+    // Construtor secundário para quando o utilizador pesquisa os empréstimos de um sócio específico
     public ConsultarEmprestimos(Socio socio){
         setTitle("Consultar Empréstimos - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -145,7 +141,6 @@ public class ConsultarEmprestimos extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Top panel with "BIBLIOTECH" label and navigation
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -171,7 +166,6 @@ public class ConsultarEmprestimos extends JFrame {
         backLabel.setBorder(new EmptyBorder(0, 25, 0, 0)); // Add left margin
         backLabel.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
-                // Handle back click
                 setVisible(false);
                 new MenuEmprestimos().setVisible(true);
             }
@@ -193,21 +187,16 @@ public class ConsultarEmprestimos extends JFrame {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Main panel with table
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // Table
         String[] columnNames = {"Exemplar", "Título", "Número de Sócio", "Data Empréstimo", "Data Devolução", "Devolvido"};
-        // Fetch the list of Emprestimos
         List<Emprestimo> emprestimosUnfiltered = Emprestimos.getInstance().getEmprestimos();
 
-        // filter emprestimos that have socio as the current socio
         List<Emprestimo> emprestimos = emprestimosUnfiltered.stream().filter(emprestimo -> emprestimo.getSocio().equals(socio)).collect(Collectors.toList());
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        // Convert the list of Emprestimos into a 2D Object array
         Object[][] data = new Object[emprestimos.size()][6];
         for (int i = 0; i < emprestimos.size(); i++) {
             Emprestimo emprestimo = emprestimos.get(i);
@@ -228,10 +217,9 @@ public class ConsultarEmprestimos extends JFrame {
 
             @Override
             public boolean isCellEditable(int row, int column) {
-                // Only allow editing in the "check" column
                 if (column == 5) {
                     Boolean isChecked = (Boolean) getValueAt(row, column);
-                    return !isChecked; // If the checkbox is already checked, don't allow further interaction
+                    return !isChecked;
                 }
                 return false;
             }
@@ -239,14 +227,11 @@ public class ConsultarEmprestimos extends JFrame {
             @Override
             public void setValueAt(Object aValue, int row, int column) {
                 if (column == 5 && aValue instanceof Boolean && (Boolean) aValue == true) {
-                    // If the checkbox is not checked, show a confirmation dialog before allowing to check it
                     int response = JOptionPane.showConfirmDialog(null, "Tens a certeza que queres confirmar a devolução?", "Confirmation", JOptionPane.YES_NO_OPTION);
                     if (response == JOptionPane.YES_OPTION) {
                         super.setValueAt(aValue, row, column);
-                        // Get the selected Emprestimos.Emprestimo and call the devolver() method
                         Emprestimo selectedEmprestimo = emprestimos.get(row);
                         selectedEmprestimo.devolver();
-                        // Update the "Data Devolucao" column in the table
                         super.setValueAt(dateFormat.format(selectedEmprestimo.getDataDeDevolucao()), row, 4);
                     }
                 } else {

@@ -8,13 +8,13 @@ import java.util.List;
 
 public class ConsultarAquisicoes extends JFrame {
     public ConsultarAquisicoes() {
+        // Layout da página
         setTitle("Consultar Aquisições - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(1280, 720);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Top panel with "BIBLIOTECH" label and navigation
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -40,7 +40,6 @@ public class ConsultarAquisicoes extends JFrame {
         backLabel.setBorder(new EmptyBorder(0, 25, 0, 0)); // Add left margin
         backLabel.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
-                // Handle back click
                 setVisible(false);
                 new MenuAquisicoes().setVisible(true);
             }
@@ -62,15 +61,15 @@ public class ConsultarAquisicoes extends JFrame {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Main panel with table
+        // Conteúdo
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // Fetch the list of Aquisicoes
+
         List<Aquisicao> aquisicoes = Aquisicoes.getInstance().getAquisicoes();
 
-        // Convert the list of Aquisicoes into a 2D Object array
+        // Criar e preencher a tabela com os dados das aquisições
         String[] columnNames = {"Título", "Código", "Distribuidor", "Autores", "Gêneros", "Editora", "Edição/Ano", "ISBN", "Prateleira/Estante"};
         Object[][] data = new Object[aquisicoes.size()][columnNames.length];
         for (int i = 0; i < aquisicoes.size(); i++) {
@@ -112,7 +111,7 @@ public class ConsultarAquisicoes extends JFrame {
         add(mainPanel, BorderLayout.CENTER);
     }
 
-    // Secondary constructor to display a specific Aquisicao
+    // Construtor secundário para quando o utilizador pesquisa os dados de uma aquisição específica
     public ConsultarAquisicoes(Aquisicao aquisicao) {
         setTitle("Consultar Aquisição - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -120,7 +119,6 @@ public class ConsultarAquisicoes extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Top panel with "BIBLIOTECH" label and navigation
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -146,7 +144,6 @@ public class ConsultarAquisicoes extends JFrame {
         backLabel.setBorder(new EmptyBorder(0, 25, 0, 0)); // Add left margin
         backLabel.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
-                // Handle back click
                 setVisible(false);
                 new MenuAquisicoes().setVisible(true);
             }
@@ -168,12 +165,10 @@ public class ConsultarAquisicoes extends JFrame {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Main panel with table
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // Convert the Aquisicao into a 2D Object array
         String[] columnNames = {"Título", "Código", "Distribuidor", "Autores", "Gêneros", "Editora", "Edição/Ano", "ISBN", "Prateleira/Estante"};
         Object[][] data = new Object[1][columnNames.length];
 

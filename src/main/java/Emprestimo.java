@@ -10,12 +10,12 @@ public class Emprestimo {
     private Date dataLimite;
     private boolean devolvido;
     private double valorMulta;
-    private boolean multaPaga;              // se quiserem mudar a lógica da multa estejam à vontade
+    private boolean multaPaga;
     public Emprestimo(Socio socio, Exemplar exemplar) {
         this.socio = socio;
         this.exemplar = exemplar;
         this.dataDeEmprestimo = new Date();
-        this.devolvido = false; // Initially, the item is not returned
+        this.devolvido = false;
         this.valorMulta = 0.0;
         this.dataLimite = new Date();
         this.dataLimite.setDate(this.dataDeEmprestimo.getDate() + ValoresPredefinicoes.getInstance().getDiasEmprestimo());

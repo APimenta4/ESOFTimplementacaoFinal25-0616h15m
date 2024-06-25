@@ -10,13 +10,13 @@ public class NovoEmprestimo extends JFrame {
     JTextField numeroSocioField;
     JTextField codigoExemplarField;
     public NovoEmprestimo() {
+        // Layout da página
         setTitle("Empréstimos - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(1280, 720);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Top panel with "BIBLIOTECH" label and navigation
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -37,12 +37,11 @@ public class NovoEmprestimo extends JFrame {
         JPanel navigationPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel backLabel = new JLabel("← ");
         backLabel.setFont(new Font("Serif", Font.BOLD, 50));
-        backLabel.setForeground(new Color(51, 153, 255)); // Blue color
+        backLabel.setForeground(new Color(51, 153, 255));
         backLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        backLabel.setBorder(new EmptyBorder(0, 25, 0, 0)); // Add left margin
+        backLabel.setBorder(new EmptyBorder(0, 25, 0, 0));
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                // Handle back click
                 setVisible(false);
                 new MenuEmprestimos().setVisible(true);
             }
@@ -52,7 +51,7 @@ public class NovoEmprestimo extends JFrame {
         JLabel emprestimosLabel = new JLabel("Empréstimos/");
         emprestimosLabel.setFont(new Font("Serif", Font.BOLD, 25));
         emprestimosLabel.setForeground(new Color(51, 153, 255));
-        emprestimosLabel.setBorder(new EmptyBorder(0, 10, 0, 0)); // Add left margin
+        emprestimosLabel.setBorder(new EmptyBorder(0, 10, 0, 0));
         navigationPanel.add(emprestimosLabel);
 
         JLabel registrarLabel = new JLabel("Registar novo empréstimo");
@@ -64,17 +63,14 @@ public class NovoEmprestimo extends JFrame {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Main panel
+        // Conteúdo
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // Replace the current font declarations
         Font labelFont = new Font("Arial", Font.PLAIN, 20);
         Font textFieldFont = new Font("Arial", Font.PLAIN, 20);
 
-
-        // Labels and text fields
         JPanel formPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
@@ -90,15 +86,13 @@ public class NovoEmprestimo extends JFrame {
         gbc.weightx = 0.7;
         JTextField numeroSocioField = new JTextField();
         numeroSocioField.setFont(textFieldFont);
-        numeroSocioField.setPreferredSize(new Dimension(300, 40)); // Increased size
-
+        numeroSocioField.setPreferredSize(new Dimension(300, 40));
 
         formPanel.add(numeroSocioField, gbc);
 
-        // Error message label
         gbc.gridx = 0;
         gbc.gridy = 2;
-        gbc.gridwidth = 2; // Span across 2 columns
+        gbc.gridwidth = 2;
         JLabel errorMessageLabel = new JLabel();
         errorMessageLabel.setFont(new Font("Arial", Font.BOLD, 20));
         errorMessageLabel.setForeground(Color.RED);
@@ -115,22 +109,19 @@ public class NovoEmprestimo extends JFrame {
         gbc.weightx = 0.7;
         JTextField codigoExemplarField = new JTextField();
         codigoExemplarField.setFont(textFieldFont);
-        codigoExemplarField.setPreferredSize(new Dimension(300, 40)); // Increased size
+        codigoExemplarField.setPreferredSize(new Dimension(300, 40));
         formPanel.add(codigoExemplarField, gbc);
 
         mainPanel.add(formPanel);
 
 
-        // Confirm button
         confirmButton = new JButton("Confirmar empréstimo");
-        confirmButton.setPreferredSize(new Dimension(250, 50)); // Set the preferred width to 200 and height to 50
-        confirmButton.setMaximumSize(new Dimension(250, 50)); // Set maximum size for the button
+        confirmButton.setPreferredSize(new Dimension(250, 50));
+        confirmButton.setMaximumSize(new Dimension(250, 50));
         confirmButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Retrieve the Socio with the provided numeroDeSocio
-
                 String numeroDeSocio = numeroSocioField.getText();
                 String codigoExemplar = codigoExemplarField.getText();
 
@@ -146,7 +137,7 @@ public class NovoEmprestimo extends JFrame {
             }
         });
 
-        mainPanel.add(Box.createRigidArea(new Dimension(0, 20))); // Spacer
+        mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
         mainPanel.add(confirmButton);
 
         add(mainPanel, BorderLayout.CENTER);
@@ -157,9 +148,8 @@ public class NovoEmprestimo extends JFrame {
         Socio socio = Socios.getInstance().getSocios().stream().filter(s -> String.valueOf(s.getNumeroDeSocio()).equals(numeroDeSocio)).findFirst().orElse(null);
         Exemplar exemplar = Exemplares.getInstance().getExemplares().stream().filter(ex -> ex.getCodigo().equals(codigoExemplar)).findFirst().orElse(null);
 
-        String message = ""; // Initialize an empty string for the message
+        String message = "";
 
-        // If both Socio and Exemplar are found, create a new Emprestimos.Emprestimo
         if (socio != null && exemplar != null) {
             if (socio.getAnuidadePaga() < Year.now().getValue()) {
                 message = "O sócio especificado não tem a anuidade paga";
@@ -183,7 +173,6 @@ public class NovoEmprestimo extends JFrame {
             }
             message = errorMessage.toString();
         }
-        // Return the message string
         return message;
     }
 

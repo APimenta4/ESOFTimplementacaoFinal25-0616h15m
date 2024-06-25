@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 
 public class Predefinicoes extends JFrame {
     public Predefinicoes() {
+        // Layout da página
         setTitle("Empréstimos - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(1280, 720);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Top panel with "BIBLIOTECH" label and "Definições" title
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -37,14 +37,13 @@ public class Predefinicoes extends JFrame {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Main panel
+        // Conteúdo
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        mainPanel.add(Box.createRigidArea(new Dimension(0, 20))); // Spacer
+        mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
 
-        // Settings panel with GridBagLayout for better control
         JPanel settingsPanel = new JPanel(new GridBagLayout());
         settingsPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
         GridBagConstraints gbc = new GridBagConstraints();
@@ -56,7 +55,6 @@ public class Predefinicoes extends JFrame {
 
         ValoresPredefinicoes valoresPredefinicoes = ValoresPredefinicoes.getInstance();
 
-        // Labels and text fields
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.weightx = 0.3;
@@ -129,27 +127,21 @@ public class Predefinicoes extends JFrame {
         emprestimosExtraPremiumField.setFont(textFieldFont);
         settingsPanel.add(emprestimosExtraPremiumField, gbc);
 
-
-
         mainPanel.add(settingsPanel);
 
-
-        // Confirm button
         JButton confirmButton = new JButton("Confirmar dados");
-        confirmButton.setPreferredSize(new Dimension(250, 50)); // Set the preferred width to 200 and height to 50
-        confirmButton.setMaximumSize(new Dimension(250, 50)); // Set maximum size for the button
+        confirmButton.setPreferredSize(new Dimension(250, 50));
+        confirmButton.setMaximumSize(new Dimension(250, 50));
         confirmButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Retrieve the text from the text fields
                 String diasEmprestimoText = diasEmprestimoField.getText();
                 String maxEmprestimosText = maxEmprestimosField.getText();
                 String multaDiaText = multaDiaField.getText();
                 String anuidadeNormalText = anuidadeNormalField.getText();
                 String anuidadePremiumText = anuidadePremiumField.getText();
 
-                // Convert the text to integers
                 try {
                     int diasEmprestimo = Integer.parseInt(diasEmprestimoText);
                     int maxEmprestimos = Integer.parseInt(maxEmprestimosText);
@@ -158,7 +150,6 @@ public class Predefinicoes extends JFrame {
                     int anuidadePremium = Integer.parseInt(anuidadePremiumText);
                     int extraPremium = Integer.parseInt(emprestimosExtraPremiumField.getText());
 
-                    // Set the values in ValoresPredefinicoes
                     ValoresPredefinicoes valoresPredefinicoes = ValoresPredefinicoes.getInstance();
                     valoresPredefinicoes.setDiasEmprestimo(diasEmprestimo);
                     valoresPredefinicoes.setMaxEmprestimos(maxEmprestimos);
@@ -167,12 +158,10 @@ public class Predefinicoes extends JFrame {
                     valoresPredefinicoes.setAnuidadePremium(anuidadePremium);
                     valoresPredefinicoes.setExtraPremium(extraPremium);
 
-                    // Show a success message
                     JOptionPane.showMessageDialog(null, "Definições alteradas com sucesso");
                     setVisible(false);
                     new JanelaPrincipal().setVisible(true);
                 } catch (NumberFormatException ex) {
-                    // Show an error message
                     JOptionPane.showMessageDialog(null, "Os valores inseridos são inválidos");
                 }
             }

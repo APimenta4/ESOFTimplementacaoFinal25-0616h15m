@@ -8,7 +8,7 @@ public class Aquisicao {
     public Aquisicao(Exemplar exemplar, Distribuidor distributor) {
         this.exemplar = exemplar;
         this.distributor = distributor;
-        this.aquisitionDate = new Date();
+        this.aquisitionDate = new Date();    // A data de aquisição é considerada a data atual do sistema
     }
 
     public Exemplar getExemplar() {

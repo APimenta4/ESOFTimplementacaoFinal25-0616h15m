@@ -70,20 +70,18 @@ public class JanelaPrincipal extends JFrame {
             e.printStackTrace();
         }
 
-        // Create a panel for the exit button and settings icon
         JPanel bottomPanel = new JPanel(new BorderLayout());
 
         JButton exitButton = new JButton("Sair");
         JLabel settingsLabel = new JLabel(settingsIcon);
 
-        // Create a panel for the exit button with a small margin
         JPanel exitPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        exitPanel.setBorder(new EmptyBorder(0, 0, 7, 25)); // top, left, bottom, right
+        exitPanel.setBorder(new EmptyBorder(0, 0, 7, 25));
         exitPanel.add(exitButton);
 
-        // Create a panel for the settings icon with a small margin
+
         JPanel settingsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        settingsPanel.setBorder(new EmptyBorder(0, 25, 15, 0)); // top, left, bottom, right
+        settingsPanel.setBorder(new EmptyBorder(0, 25, 15, 0));
         settingsPanel.add(settingsLabel);
 
         bottomPanel.add(settingsPanel, BorderLayout.WEST);
@@ -94,10 +92,9 @@ public class JanelaPrincipal extends JFrame {
         emprestimosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Hide the current window
+
                 setVisible(false);
 
-                // Show the new window
                 new MenuEmprestimos().setVisible(true);
             }
         });
@@ -112,10 +109,9 @@ public class JanelaPrincipal extends JFrame {
         livrosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Hide the current window
+
                 setVisible(false);
 
-                // Show the new window
                 new MenuAquisicoes().setVisible(true);
             }
         });
@@ -150,10 +146,7 @@ public class JanelaPrincipal extends JFrame {
 
         settingsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                // Hide the current window
                 setVisible(false);
-
-                // Show the new window
                 new Predefinicoes().setVisible(true);
             }
         });

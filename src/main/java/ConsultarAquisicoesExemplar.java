@@ -6,13 +6,14 @@ import java.awt.event.ActionListener;
 import java.util.List;
 public class ConsultarAquisicoesExemplar extends JFrame {
     public ConsultarAquisicoesExemplar() {
+        // Layout da página
         setTitle("Consultar Aquisições - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(1280, 720);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Top panel with "BIBLIOTECH" label and navigation
+
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -60,16 +61,14 @@ public class ConsultarAquisicoesExemplar extends JFrame {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Main panel
+        // Conteúdo
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // Replace the current font declarations
         Font labelFont = new Font("Arial", Font.PLAIN, 20);
         Font textFieldFont = new Font("Arial", Font.PLAIN, 20);
 
-        // Labels and text fields
         JPanel formPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
@@ -90,7 +89,6 @@ public class ConsultarAquisicoesExemplar extends JFrame {
 
         mainPanel.add(formPanel);
 
-        // Search button
         JButton searchButton = new JButton("Pesquisar aquisição");
         searchButton.setPreferredSize(new Dimension(250, 50)); // Set the preferred width to 250 and height to 50
         searchButton.setMaximumSize(new Dimension(250, 50)); // Set maximum size for the button
@@ -98,7 +96,6 @@ public class ConsultarAquisicoesExemplar extends JFrame {
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Retrieve the text from the text field
                 String codigoExemplar = codigoExemplarField.getText();
 
                 if(codigoExemplar == null || codigoExemplar.isEmpty()){
@@ -106,27 +103,21 @@ public class ConsultarAquisicoesExemplar extends JFrame {
                     return;
                 }
 
-                // Get the list of Aquisicao objects
                 List<Aquisicao> aquisicoes = Aquisicoes.getInstance().getAquisicoes();
 
-                // Iterate over the list
                 for (Aquisicao aquisicao : aquisicoes) {
-                    // Check if the Exemplar's code matches the retrieved text
                     if (aquisicao.getExemplar().getCodigo().equals(codigoExemplar)) {
-                        // Create a new ConsultarAquisicoes window with the found Aquisicao as a parameter and show it
                         setVisible(false);
                         new ConsultarAquisicoes(aquisicao).setVisible(true);
                         return;
                     }
                 }
 
-
-                // If no match was found, show an error message
                 JOptionPane.showMessageDialog(null, "O exemplar especificado não existe ou não possui aquisição");
             }
         });
 
-        mainPanel.add(Box.createRigidArea(new Dimension(0, 20))); // Spacer
+        mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
         mainPanel.add(searchButton);
 
         add(mainPanel, BorderLayout.CENTER);
@@ -134,24 +125,19 @@ public class ConsultarAquisicoesExemplar extends JFrame {
 
 
     protected String pesquisarAquisicoesExemplar(String codigoExemplar) {
-        // Get the list of Aquisicao objects
         if(codigoExemplar == null || codigoExemplar.isEmpty()){
             return "O código de exemplar não pode ser vazio";
         }
 
         List<Aquisicao> aquisicoes = Aquisicoes.getInstance().getAquisicoes();
 
-        // Iterate over the list
         for (Aquisicao aquisicao : aquisicoes) {
-            // Check if the Exemplar's code matches the retrieved text
             if (aquisicao.getExemplar().getCodigo().equals(codigoExemplar)) {
-                // Create a new ConsultarAquisicoes window with the found Aquisicao as a parameter and show it
                 new ConsultarAquisicoes(aquisicao).setVisible(true);
                 return "Aquisição encontrada";
             }
         }
 
-        // If no match was found, show an error message
         return "O exemplar especificado não existe ou não possui aquisição";
     }
 

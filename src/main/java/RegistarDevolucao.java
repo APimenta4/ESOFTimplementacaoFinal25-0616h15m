@@ -7,13 +7,13 @@ import java.util.List;
 
 public class RegistarDevolucao extends JFrame {
     public RegistarDevolucao() {
+        // Layout da página
         setTitle("Registar Devolução - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(1280, 720);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Top panel with "BIBLIOTECH" label and navigation
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -34,12 +34,11 @@ public class RegistarDevolucao extends JFrame {
         JPanel navigationPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel backLabel = new JLabel("← ");
         backLabel.setFont(new Font("Serif", Font.BOLD, 50));
-        backLabel.setForeground(new Color(51, 153, 255)); // Blue color
+        backLabel.setForeground(new Color(51, 153, 255));
         backLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        backLabel.setBorder(new EmptyBorder(0, 25, 0, 0)); // Add left margin
+        backLabel.setBorder(new EmptyBorder(0, 25, 0, 0));
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                // Handle back click
                 setVisible(false);
                 new MenuEmprestimos().setVisible(true);
             }
@@ -49,7 +48,7 @@ public class RegistarDevolucao extends JFrame {
         JLabel emprestimosLabel = new JLabel("Empréstimos/");
         emprestimosLabel.setFont(new Font("Serif", Font.BOLD, 25));
         emprestimosLabel.setForeground(new Color(51, 153, 255));
-        emprestimosLabel.setBorder(new EmptyBorder(0, 10, 0, 0)); // Add left margin
+        emprestimosLabel.setBorder(new EmptyBorder(0, 10, 0, 0));
         navigationPanel.add(emprestimosLabel);
 
         JLabel registarLabel = new JLabel("Registar devolução");
@@ -61,16 +60,13 @@ public class RegistarDevolucao extends JFrame {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Main panel
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // Replace the current font declarations
         Font labelFont = new Font("Arial", Font.PLAIN, 20);
         Font textFieldFont = new Font("Arial", Font.PLAIN, 20);
 
-        // Labels and text fields
         JPanel formPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
@@ -87,24 +83,22 @@ public class RegistarDevolucao extends JFrame {
         gbc.weightx = 0.4;
         JTextField numeroSocioField = new JTextField();
         numeroSocioField.setFont(textFieldFont);
-        numeroSocioField.setPreferredSize(new Dimension(200, 40)); // Decreased size
+        numeroSocioField.setPreferredSize(new Dimension(200, 40));
         formPanel.add(numeroSocioField, gbc);
 
         gbc.gridx = 2;
         gbc.weightx = 0.3;
         // "Ver todos" button
         JButton verTodosButton = new JButton("Ver todos");
-        verTodosButton.setPreferredSize(new Dimension(150, 40)); // Set the preferred width to 150 and height to 40
-        verTodosButton.setMaximumSize(new Dimension(150, 40)); // Set maximum size for the button
+        verTodosButton.setPreferredSize(new Dimension(150, 40));
+        verTodosButton.setMaximumSize(new Dimension(150, 40));
 
         List<Socio> socios = Socios.getInstance().getSocios();
         verTodosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Retrieve the text from the text box
                 String numeroSocioText = numeroSocioField.getText();
 
-                // Convert the text to an integer
                 int numeroSocio;
                 try {
                     numeroSocio = Integer.parseInt(numeroSocioText);
@@ -113,16 +107,14 @@ public class RegistarDevolucao extends JFrame {
                     return;
                 }
 
-                // Find the Socio with the given number
                 Socio socio = null;
-                for (Socio s : socios) { // Assuming 'socios' is the list of all Socio objects
+                for (Socio s : socios) {
                     if (s.getNumeroDeSocio() == numeroSocio) {
                         socio = s;
                         break;
                     }
                 }
 
-                // If no Socio was found, show an error message
                 if (socio == null) {
                     JOptionPane.showMessageDialog(null, "O sócio especificado não existe");
                     return;
@@ -142,8 +134,6 @@ public class RegistarDevolucao extends JFrame {
                     return;
                 }
 
-
-                // Show the ConsultarEmprestimos page with the found Socio as a parameter
                 setVisible(false);
                 new ConsultarEmprestimos(socio).setVisible(true);
             }
@@ -160,21 +150,19 @@ public class RegistarDevolucao extends JFrame {
         gbc.weightx = 0.7;
         JTextField codigoExemplarField = new JTextField();
         codigoExemplarField.setFont(textFieldFont);
-        codigoExemplarField.setPreferredSize(new Dimension(300, 40)); // Increased size
+        codigoExemplarField.setPreferredSize(new Dimension(300, 40));
         formPanel.add(codigoExemplarField, gbc);
 
         mainPanel.add(formPanel);
 
 
-        // Register button
         JButton registerButton = new JButton("Registar devolução");
-        registerButton.setPreferredSize(new Dimension(250, 50)); // Set the preferred width to 250 and height to 50
-        registerButton.setMaximumSize(new Dimension(250, 50)); // Set maximum size for the button
+        registerButton.setPreferredSize(new Dimension(250, 50));
+        registerButton.setMaximumSize(new Dimension(250, 50));
         registerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Retrieve the text from the text fields
                 int numeroSocio;
                 List<Socio> socios = Socios.getInstance().getSocios();
                 try {
@@ -184,7 +172,6 @@ public class RegistarDevolucao extends JFrame {
                     return;
                 }
 
-                // Find the Socio with the given number
                 Socio socio = null;
                 for (Socio s : socios) {
                     if (s.getNumeroDeSocio() == numeroSocio) {
@@ -193,26 +180,20 @@ public class RegistarDevolucao extends JFrame {
                     }
                 }
 
-                // If no Socio was found, show an error message
                 if (socio == null) {
                     JOptionPane.showMessageDialog(null, "O sócio especificado não existe");
                     return;
                 }
                 String codigoExemplar = codigoExemplarField.getText();
 
-                // Get the list of Emprestimos.Emprestimo objects
                 List<Emprestimo> emprestimos = Emprestimos.getInstance().getEmprestimos();
                 boolean hasEmprestimos = false;
-                // Iterate over the list
                 for (Emprestimo emprestimo : emprestimos) {
-                    // Check if the Socio's number and Exemplar's code match the retrieved text
                     if (emprestimo.getSocio().getNumeroDeSocio() == numeroSocio && !emprestimo.isDevolvido()) {
                         hasEmprestimos = true;
                         if (emprestimo.getExemplar().getCodigo().equals(codigoExemplar)) {
-                            // Register the return and show a success message
                             emprestimo.devolver();
                             JOptionPane.showMessageDialog(null, "Empréstimo devolvido com sucesso");
-                            // return to JanelaPrincipal
                             setVisible(false);
                             new JanelaPrincipal().setVisible(true);
                             return;
@@ -224,12 +205,11 @@ public class RegistarDevolucao extends JFrame {
                     return;
                 }
 
-                // If no match was found, show an error message
                 JOptionPane.showMessageDialog(null, "O exemplar não se encontra emprestado ao sócio especificado");
             }
         });
 
-        mainPanel.add(Box.createRigidArea(new Dimension(0, 20))); // Spacer
+        mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
         mainPanel.add(registerButton);
 
         add(mainPanel, BorderLayout.CENTER);
@@ -237,7 +217,6 @@ public class RegistarDevolucao extends JFrame {
 
 
     protected String verTodos(String numeroSocioText){
-        // Convert the text to an integer
         int numeroSocio;
         try {
             numeroSocio = Integer.parseInt(numeroSocioText);
@@ -246,16 +225,14 @@ public class RegistarDevolucao extends JFrame {
         }
 
         List<Socio> socios = Socios.getInstance().getSocios();
-        // Find the Socio with the given number
         Socio socio = null;
-        for (Socio s : socios) { // Assuming 'socios' is the list of all Socio objects
+        for (Socio s : socios) {
             if (s.getNumeroDeSocio() == numeroSocio) {
                 socio = s;
                 break;
             }
         }
 
-        // If no Socio was found, show an error message
         if (socio == null) {
             return "O sócio especificado não existe";
         }
@@ -286,7 +263,6 @@ public class RegistarDevolucao extends JFrame {
             return "O número de sócio especificado é inválido";
         }
 
-        // Find the Socio with the given number
         Socio socio = null;
         for (Socio s : socios) {
             if (s.getNumeroDeSocio() == numeroSocio) {
@@ -295,25 +271,19 @@ public class RegistarDevolucao extends JFrame {
             }
         }
 
-        // If no Socio was found, show an error message
         if (socio == null) {
             return "O sócio especificado não existe";
         }
 
         String codigoExemplar = codigoExemplarText;
 
-        // Get the list of Emprestimos.Emprestimo objects
         List<Emprestimo> emprestimos = Emprestimos.getInstance().getEmprestimos();
         boolean hasEmprestimos = false;
-        // Iterate over the list
         for (Emprestimo emprestimo : emprestimos) {
-            // Check if the Socio's number and Exemplar's code match the retrieved text
             if (emprestimo.getSocio().getNumeroDeSocio() == numeroSocio && !emprestimo.isDevolvido()) {
                 hasEmprestimos = true;
                 if (emprestimo.getExemplar().getCodigo().equals(codigoExemplar)) {
-                    // Register the return and show a success message
                     emprestimo.devolver();
-                    // return to JanelaPrincipal
                     return "Empréstimo devolvido com sucesso";
                 }
             }
@@ -322,7 +292,6 @@ public class RegistarDevolucao extends JFrame {
             return "O sócio especificado não possui empréstimos em aberto";
         }
 
-        // If no match was found, show an error message
         return "O exemplar não se encontra emprestado ao sócio especificado";
     }
 

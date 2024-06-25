@@ -10,13 +10,13 @@ import java.net.URL;
 
 public class MenuAquisicoes extends JFrame {
     public MenuAquisicoes() {
+        // Layout da página
         setTitle("Aquisições - BIBLIOTECH");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(1280, 720);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Top panel with "BIBLIOTECH" label and "Aquisições" title
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -42,12 +42,12 @@ public class MenuAquisicoes extends JFrame {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Button panel
+        // Conteúdo
         JPanel buttonPanel = new JPanel(new GridBagLayout());
         buttonPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
-        gbc.fill = GridBagConstraints.BOTH;  // Allow resizing
+        gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
 
@@ -77,7 +77,6 @@ public class MenuAquisicoes extends JFrame {
 
         add(buttonPanel, BorderLayout.CENTER);
 
-        // Bottom panel
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JButton voltarButton = new JButton("Voltar");
         bottomPanel.setBorder(new EmptyBorder(0, 0, 20, 20));
@@ -87,16 +86,13 @@ public class MenuAquisicoes extends JFrame {
         voltarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Hide the current window (Emprestimos, Aquisicoes, etc.)
                 setVisible(false);
 
-                // Show the main window (JanelaPrincipal)
                 JanelaPrincipal mainFrame = new JanelaPrincipal();
                 mainFrame.setVisible(true);
             }
         });
 
-        // Add ActionListeners for other buttons if needed
         registarNovaAquisicaoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -130,24 +126,21 @@ public class MenuAquisicoes extends JFrame {
         button.setLayout(new BorderLayout());
         button.setFont(new Font("Arial", Font.PLAIN, 26));
         button.setPreferredSize(new Dimension(375, 170));
-        button.setMaximumSize(new Dimension(375, 170));  // Set maximum size for the button
-        button.setFocusPainted(false);  // Remove focus indicator
+        button.setMaximumSize(new Dimension(375, 170));
+        button.setFocusPainted(false);
 
         try {
             URL iconURL = getClass().getResource(iconName);
             BufferedImage img = ImageIO.read(iconURL);
             ImageIcon icon = new ImageIcon(img);
 
-            // Scale the icon if needed
             Image scaledImg = icon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
             ImageIcon scaledIcon = new ImageIcon(scaledImg);
 
-            // Add the icon with a small margin
             JLabel iconLabel = new JLabel(scaledIcon);
-            iconLabel.setBorder(new EmptyBorder(0, 10, 0, 10)); // Adjust as needed
+            iconLabel.setBorder(new EmptyBorder(0, 10, 0, 10));
             button.add(iconLabel, BorderLayout.WEST);
 
-            // Add the text
             JLabel textLabel = new JLabel("<html>" + text + "</html>");
             textLabel.setFont(new Font("Arial", Font.PLAIN, 26));
             textLabel.setAlignmentX(Component.CENTER_ALIGNMENT);

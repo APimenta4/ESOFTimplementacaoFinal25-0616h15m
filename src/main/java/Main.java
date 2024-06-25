@@ -5,12 +5,20 @@ public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                Socio socio1 = new Socio("João", "sms", "Normal"); // Sócio com o número máximo de empréstimos (2)
+
+                //--- Aqui, são adicionados alguns valores para testes
+
+                // Sócio normal com o número máximo de empréstimos default (2)
+                Socio socio1 = new Socio("João", "sms", "Normal");
+                // Sócio sem anuidade paga (utiliza um construtor secundário para testes, os sócios implementados "pagam" a anuidade logo quando são registados)
+                Socio socio4 = new Socio("Antonia", "sms", "Premium", 2023);
+                // Sócio com o número máximo de empréstimos default (2) mas de tipo premium (consegue registar mais)
+                Socio socio5 = new Socio("Antonio", "sms", "Premium");
+                // Sócio sem empréstimos
+                Socio socio6 = new Socio("Rodrigo", "sms", "Premium");
+
                 Socio socio2 = new Socio("Tomas", "sms", "Premium");
                 Socio socio3 = new Socio("Maria", "sms", "Premium");
-                Socio socio4 = new Socio("Antonia", "sms", "Premium", 2023); // Sócio sem anuidade paga
-                Socio socio5 = new Socio("Antonio", "sms", "Premium"); // Sócio com o número máximo de empréstimos (2) mas premium
-                Socio socio6 = new Socio("Rodrigo", "sms", "Premium"); // Sócio sem empréstimos
 
                 Socios.getInstance().addSocio(socio1);
                 Socios.getInstance().addSocio(socio2);
@@ -34,13 +42,13 @@ public class Main {
                 Distribuidores.getInstance().addDistribuidor(distribuidor3);
 
                 // A implementação da organização dos códigos de cada livro fica ao critério do utilizador, contudo, têm de ser únicos
-                Exemplar exemplar1 = new Exemplar("123", "1", "Afonso Pimenta1", "Drama - Ação", editora3, "2020", "424", "P1/E5");
-                Exemplar exemplar2 = new Exemplar("123", "2", "Afonso Pimenta2", "Drama", editora2, "2020", "414", "P1/E5");
-                Exemplar exemplar3 = new Exemplar("123", "3", "Afonso Pimenta3", "Drama", editora1, "2020", "454", "P1/E5");
-                Exemplar exemplar4 = new Exemplar("123", "4", "Afonso Pimenta3", "Drama", editora1, "2020", "464", "P1/E5");
-                Exemplar exemplar5 = new Exemplar("123", "LivroOcupado1", "Afonso Pimenta3", "Drama", editora1, "2020", "7", "P1/E5");
-                Exemplar exemplar6 = new Exemplar("123", "LivroOcupado2", "Afonso Pimenta3", "Drama", editora1, "2020", "1", "P1/E5");
-                Exemplar exemplar7 = new Exemplar("123", "LivroExtra1", "Afonso Pimenta3", "Drama", editora1, "2020", "1", "P1/E5");
+                Exemplar exemplar1 = new Exemplar("123", "1", "Autor1", "Drama - Ação", editora3, "2020", "424", "P1/E5");
+                Exemplar exemplar2 = new Exemplar("123", "2", "2", "Drama", editora2, "2020", "414", "P1/E5");
+                Exemplar exemplar3 = new Exemplar("123", "3", "Teste", "Drama", editora1, "2020", "454", "P1/E5");
+                Exemplar exemplar4 = new Exemplar("123", "4", "Autora", "Drama", editora1, "2020", "464", "P1/E5");
+                Exemplar exemplar5 = new Exemplar("123", "LivroOcupado1", "Autor", "Drama", editora1, "2020", "7", "P1/E5");
+                Exemplar exemplar6 = new Exemplar("123", "LivroOcupado2", "OOO", "Drama", editora1, "2020", "1", "P1/E5");
+                Exemplar exemplar7 = new Exemplar("123", "LivroExtra1", "X", "Drama", editora1, "2020", "1", "P1/E5");
                 Exemplares.getInstance().addExemplar(exemplar1);
                 Exemplares.getInstance().addExemplar(exemplar2);
                 Exemplares.getInstance().addExemplar(exemplar3);
