@@ -157,4 +157,44 @@ public class ConsultarEmprestimosSocio extends JFrame {
     }
 
 
+    protected String consultarEmprestimo(String numeroDeSocioText) {
+
+        int numeroDeSocio;
+        try {
+            numeroDeSocio = Integer.parseInt(numeroDeSocioText);
+        } catch (NumberFormatException ex) {
+            return "O número de sócio especificado é inválido";
+        }
+
+        List<Socio> socios = Socios.getInstance().getSocios();
+        // Find the Socio with the given number
+        Socio socio = null;
+        for (Socio s : socios) { // Assuming 'socios' is the list of all Socio objects
+            if (s.getNumeroDeSocio() == numeroDeSocio) {
+                socio = s;
+                break;
+            }
+        }
+        // If no Socio was found, show an error message
+        if (socio == null) {
+            return "O sócio especificado não existe";
+        }
+
+        List<Emprestimo> emprestimos = Emprestimos.getInstance().getEmprestimos();
+        boolean hasEmprestimo = false;
+        for (Emprestimo emprestimo : emprestimos) {
+            if (emprestimo.getSocio().equals(socio)) {
+                hasEmprestimo = true;
+                break;
+            }
+        }
+
+        if (!hasEmprestimo) {
+            return "O sócio especificado não possui empréstimos";
+        }
+
+        return "Empréstimos encontrados";
+    }
+
+
 }

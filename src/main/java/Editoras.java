@@ -23,4 +23,8 @@ public class Editoras {
     public void addEditora(Editora editora) {
         editoras.add(editora);
     }
+
+    public static void clearInstance() {
+        instance = null;
+    }
 }

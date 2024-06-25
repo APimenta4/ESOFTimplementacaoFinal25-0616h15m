@@ -23,4 +23,8 @@ public class Distribuidores {
     public void addDistribuidor(Distribuidor distribuidor) {
         distribuidores.add(distribuidor);
     }
+
+    public static void clearInstance() {
+        instance = null;
+    }
 }

@@ -4,82 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5916bcdf-e307-435a-9721-0765483fbccb" name="Changes" comment="Parte Afonso feita- falta testes">
-      <change afterPath="$PROJECT_DIR$/src/test/java/NovoEmprestimoTeste.java" afterDir="false" />
+    <list default="true" id="5916bcdf-e307-435a-9721-0765483fbccb" name="Changes" comment="Afonso final dia 24 falta corrigir os testes nao funcionam se forem todos de uma vez">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ConsultarAquisicaoExemplarTeste.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ConsultarEmprestimosSocioTeste.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/NovaAquisicaoTeste.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RegistarDevolucaoTeste.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Aquisicao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Aquisicoes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoes$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoes$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoes$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoesExemplar$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoesExemplar$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoesExemplar$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarAquisicoesExemplar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimos$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimos$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimos$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimosSocio$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimosSocio$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimosSocio$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ConsultarEmprestimosSocio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Emprestimo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Emprestimos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Exemplar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Exemplares.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/JanelaPrincipal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuAquisicoes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/MenuEmprestimos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/NovaAquisicao$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/NovaAquisicao$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/NovaAquisicao$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/NovaAquisicao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/NovoEmprestimo$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/NovoEmprestimo$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/NovoEmprestimo$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/NovoEmprestimo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Predefinicoes$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Predefinicoes$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Predefinicoes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucao$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucao$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucao$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucao$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/RegistarDevolucaoSocio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Socio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Socios.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/ValoresPredefinicoes.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarAquisicoesExemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarAquisicoesExemplar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimosSocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimosSocio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Emprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Emprestimo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/NovoEmprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NovoEmprestimo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Distribuidores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Distribuidores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Editoras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Editoras.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Emprestimos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Emprestimos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exemplares.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exemplares.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/NovaAquisicao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NovaAquisicao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/RegistarDevolucao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RegistarDevolucao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RegistarDevolucaoSocio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Socios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Socios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/NovoEmprestimoTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/NovoEmprestimoTeste.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,51 +77,51 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NovoEmprestimoTeste">
-    <configuration name="NovoEmprestimoTeste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ConsultarAquisicaoExemplarTeste">
+    <configuration name="ConsultarAquisicaoExemplarTeste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
+      <option name="MAIN_CLASS_NAME" value="ConsultarAquisicaoExemplarTeste" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NovoEmprestimoTeste.testAdicionarEmprestimoWithInvalidExemplarCodeFormat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
-      <option name="METHOD_NAME" value="testAdicionarEmprestimoWithInvalidExemplarCodeFormat" />
+      <option name="MAIN_CLASS_NAME" value="ConsultarAquisicaoExemplarTeste" />
+      <option name="METHOD_NAME" value="testPesquisarAquisicoesExemplarEmpty" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NovoEmprestimoTeste.testAdicionarEmprestimoWithLoanedExemplar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
-      <option name="METHOD_NAME" value="testAdicionarEmprestimoWithLoanedExemplar" />
+      <option name="MAIN_CLASS_NAME" value="ConsultarAquisicaoExemplarTeste" />
+      <option name="METHOD_NAME" value="testPesquisarAquisicoesExemplarInvalid" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NovoEmprestimoTeste.testAdicionarEmprestimoWithNormalSocioAtMaxLoans" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarNoAquisicao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
-      <option name="METHOD_NAME" value="testAdicionarEmprestimoWithNormalSocioAtMaxLoans" />
+      <option name="MAIN_CLASS_NAME" value="ConsultarAquisicaoExemplarTeste" />
+      <option name="METHOD_NAME" value="testPesquisarAquisicoesExemplarNoAquisicao" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NovoEmprestimoTeste.testAdicionarEmprestimoWithPremiumSocioAtMaxLoans" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
-      <option name="METHOD_NAME" value="testAdicionarEmprestimoWithPremiumSocioAtMaxLoans" />
+      <option name="MAIN_CLASS_NAME" value="ConsultarAquisicaoExemplarTeste" />
+      <option name="METHOD_NAME" value="testPesquisarAquisicoesExemplarValid" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -187,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NovoEmprestimoTeste" />
-        <item itemvalue="JUnit.NovoEmprestimoTeste.testAdicionarEmprestimoWithLoanedExemplar" />
-        <item itemvalue="JUnit.NovoEmprestimoTeste.testAdicionarEmprestimoWithInvalidExemplarCodeFormat" />
-        <item itemvalue="JUnit.NovoEmprestimoTeste.testAdicionarEmprestimoWithPremiumSocioAtMaxLoans" />
-        <item itemvalue="JUnit.NovoEmprestimoTeste.testAdicionarEmprestimoWithNormalSocioAtMaxLoans" />
+        <item itemvalue="JUnit.ConsultarAquisicaoExemplarTeste" />
+        <item itemvalue="JUnit.ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarNoAquisicao" />
+        <item itemvalue="JUnit.ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarInvalid" />
+        <item itemvalue="JUnit.ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarEmpty" />
+        <item itemvalue="JUnit.ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarValid" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +148,9 @@
       <workItem from="1719147371411" duration="14921000" />
       <workItem from="1719214590442" duration="8333000" />
       <workItem from="1719223132346" duration="21610000" />
-      <workItem from="1719246443909" duration="15187000" />
+      <workItem from="1719246443909" duration="15248000" />
+      <workItem from="1719301336020" duration="1308000" />
+      <workItem from="1719302675425" duration="9225000" />
     </task>
     <task id="LOCAL-00001" summary="Versao Afonso - falta so algumas verificacoes e testes">
       <created>1719239876530</created>
@@ -243,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719251118959</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Afonso final dia 24 falta corrigir os testes nao funcionam se forem todos de uma vez">
+      <created>1719265646477</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719265646477</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +203,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Versao Afonso - falta so algumas verificacoes e testes" />
     <MESSAGE value="Parte Afonso feita- falta testes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parte Afonso feita- falta testes" />
+    <MESSAGE value="Afonso final dia 24 falta corrigir os testes nao funcionam se forem todos de uma vez" />
+    <option name="LAST_COMMIT_MESSAGE" value="Afonso final dia 24 falta corrigir os testes nao funcionam se forem todos de uma vez" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ProjetoESOFT$NovoEmprestimoTeste.ic" NAME="NovoEmprestimoTeste Coverage Results" MODIFIED="1719302249952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

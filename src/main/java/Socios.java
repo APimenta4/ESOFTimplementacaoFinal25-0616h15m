@@ -23,4 +23,9 @@ public class Socios {
     public List<Socio> getSocios() {
         return socios;
     }
+
+    public static void clearInstance() {
+        instance = null;
+    }
+
 }

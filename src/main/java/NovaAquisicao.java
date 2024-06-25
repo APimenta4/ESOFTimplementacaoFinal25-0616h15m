@@ -308,36 +308,16 @@ public class NovaAquisicao extends JFrame {
                 Editora editora = (Editora) editoraComboBox.getSelectedItem();
                 Distribuidor distribuidor = (Distribuidor) distribuidorComboBox.getSelectedItem();
 
-                // Check if any field is empty
-                if (titulo.isEmpty() || autores.isEmpty() || edicaoAno.isEmpty() || codigo.isEmpty() || genero.isEmpty() || prateleira.isEmpty() || isbn.isEmpty() || editora == null || distribuidor == null) {
-                    JOptionPane.showMessageDialog(null, "Todos os campos são obrigatórios");
+                // Call the registarAquisicao method
+                String result = registarAquisicao(titulo, autores, edicaoAno, codigo, genero, prateleira, isbn, editora, distribuidor);
+
+                if(result.equals("Aquisição registada com sucesso")) {
+                    JOptionPane.showMessageDialog(null, result);
+                    setVisible(false);
+                    new JanelaPrincipal().setVisible(true);
                     return;
                 }
-
-                // Check if the codigo and isbn are unique among Exemplares
-                List<Exemplar> exemplares = Exemplares.getInstance().getExemplares();
-                for (Exemplar exemplar : exemplares) {
-                    if (exemplar.getCodigo().equals(codigo)) {
-                        JOptionPane.showMessageDialog(null, "O código especificado já existe.");
-                        return;
-                    }
-                    if (exemplar.getIsbn().equals(isbn)) {
-                        JOptionPane.showMessageDialog(null, "O ISBN especificado já existe.");
-                        return;
-                    }
-                }
-
-                // Create a new Exemplar object
-                Exemplar exemplar = new Exemplar(titulo, codigo, autores, genero, editora, edicaoAno, isbn, prateleira);
-
-                // Create a new Aquisicao object and add it to the Aquisicoes instance
-                Aquisicao aquisicao = new Aquisicao(exemplar, distribuidor);
-                Aquisicoes.getInstance().addAquisicao(aquisicao);
-
-                // Show a success message
-                JOptionPane.showMessageDialog(null, "Aquisição registada com sucesso");
-                setVisible(false);
-                new JanelaPrincipal().setVisible(true);
+                JOptionPane.showMessageDialog(null, result);
             }
         });
 
@@ -350,5 +330,70 @@ public class NovaAquisicao extends JFrame {
         add(mainPanel, BorderLayout.CENTER);
     }
 
+
+    protected String registarAquisicao(String titulo, String autores, String edicaoAno, String codigo, String genero, String prateleira, String isbn, Editora editora, Distribuidor distribuidor){
+        if (titulo.isEmpty() || autores.isEmpty() || edicaoAno.isEmpty() || codigo.isEmpty() || genero.isEmpty() || prateleira.isEmpty() || isbn.isEmpty() || editora == null || distribuidor == null) {
+            return "Todos os campos são obrigatórios";
+        }
+        // Check if the codigo and isbn are unique among Exemplares
+        List<Exemplar> exemplares = Exemplares.getInstance().getExemplares();
+        for (Exemplar exemplar : exemplares) {
+            if (exemplar.getCodigo().equals(codigo)) {
+                return "O código especificado já existe";
+            }
+            if (exemplar.getIsbn().equals(isbn)) {
+                return "O ISBN especificado já existe";
+            }
+        }
+
+        // Create a new Exemplar object
+        Exemplar exemplar = new Exemplar(titulo, codigo, autores, genero, editora, edicaoAno, isbn, prateleira);
+
+        // Create a new Aquisicao object and add it to the Aquisicoes instance
+        Aquisicao aquisicao = new Aquisicao(exemplar, distribuidor);
+        Aquisicoes.getInstance().addAquisicao(aquisicao);
+
+        // Show a success message
+        return "Aquisição registada com sucesso";
+
+    }
+
+    protected String newEditora(String newEditoraName){
+        if (newEditoraName != null && !newEditoraName.trim().isEmpty()) {
+            // Check if the newEditoraName is unique among Editoras
+            List<Editora> editoras = Editoras.getInstance().getEditoras();
+            for (Editora editora : editoras) {
+                if (editora.getName().equals(newEditoraName)) {
+                    return "O nome da editora especificado já existe";
+                }
+            }
+            // If the newEditoraName is unique, create a new Editora
+            Editora newEditora = new Editora(newEditoraName);
+            Editoras.getInstance().addEditora(newEditora);
+            return "Editora adicionada com sucesso";
+        }
+        else{
+            return "O nome da editora não pode ser vazio";
+        }
+    }
+
+    protected String newDistribuidor(String newDistribuidorName){
+        if (newDistribuidorName != null && !newDistribuidorName.trim().isEmpty()) {
+            // Check if the newDistribuidorName is unique among Distribuidores
+            List<Distribuidor> distribuidores = Distribuidores.getInstance().getDistribuidores();
+            for (Distribuidor distribuidor : distribuidores) {
+                if (distribuidor.getName().equals(newDistribuidorName)) {
+                    return "O nome do distribuidor especificado já existe";
+                }
+            }
+            // If the newDistribuidorName is unique, create a new Distribuidor
+            Distribuidor newDistribuidor = new Distribuidor(newDistribuidorName);
+            Distribuidores.getInstance().addDistribuidor(newDistribuidor);
+            return "Distribuidor adicionado com sucesso";
+        }
+        else{
+            return "O nome do distribuidor não pode ser vazio";
+        }
+    }
 
 }

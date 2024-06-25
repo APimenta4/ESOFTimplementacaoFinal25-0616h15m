@@ -101,6 +101,11 @@ public class ConsultarAquisicoesExemplar extends JFrame {
                 // Retrieve the text from the text field
                 String codigoExemplar = codigoExemplarField.getText();
 
+                if(codigoExemplar == null || codigoExemplar.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "O código de exemplar não pode estar vazio");
+                    return;
+                }
+
                 // Get the list of Aquisicao objects
                 List<Aquisicao> aquisicoes = Aquisicoes.getInstance().getAquisicoes();
 
@@ -109,10 +114,12 @@ public class ConsultarAquisicoesExemplar extends JFrame {
                     // Check if the Exemplar's code matches the retrieved text
                     if (aquisicao.getExemplar().getCodigo().equals(codigoExemplar)) {
                         // Create a new ConsultarAquisicoes window with the found Aquisicao as a parameter and show it
+                        setVisible(false);
                         new ConsultarAquisicoes(aquisicao).setVisible(true);
                         return;
                     }
                 }
+
 
                 // If no match was found, show an error message
                 JOptionPane.showMessageDialog(null, "O exemplar especificado não existe ou não possui aquisição");
@@ -123,6 +130,29 @@ public class ConsultarAquisicoesExemplar extends JFrame {
         mainPanel.add(searchButton);
 
         add(mainPanel, BorderLayout.CENTER);
+    }
+
+
+    protected String pesquisarAquisicoesExemplar(String codigoExemplar) {
+        // Get the list of Aquisicao objects
+        if(codigoExemplar == null || codigoExemplar.isEmpty()){
+            return "O código de exemplar não pode ser vazio";
+        }
+
+        List<Aquisicao> aquisicoes = Aquisicoes.getInstance().getAquisicoes();
+
+        // Iterate over the list
+        for (Aquisicao aquisicao : aquisicoes) {
+            // Check if the Exemplar's code matches the retrieved text
+            if (aquisicao.getExemplar().getCodigo().equals(codigoExemplar)) {
+                // Create a new ConsultarAquisicoes window with the found Aquisicao as a parameter and show it
+                new ConsultarAquisicoes(aquisicao).setVisible(true);
+                return "Aquisição encontrada";
+            }
+        }
+
+        // If no match was found, show an error message
+        return "O exemplar especificado não existe ou não possui aquisição";
     }
 
 }

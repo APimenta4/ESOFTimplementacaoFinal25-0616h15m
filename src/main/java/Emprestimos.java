@@ -28,4 +28,9 @@ public class Emprestimos {
     public List<Emprestimo> getEmprestimos() {
         return emprestimos;
     }
+
+    public static void clearInstance() {
+        instance = null;
+    }
+
 }

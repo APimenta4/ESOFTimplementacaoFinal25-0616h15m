@@ -128,6 +128,21 @@ public class RegistarDevolucao extends JFrame {
                     return;
                 }
 
+                List<Emprestimo> emprestimos = Emprestimos.getInstance().getEmprestimos();
+                boolean hasEmprestimo = false;
+                for (Emprestimo emprestimo : emprestimos) {
+                    if (emprestimo.getSocio().equals(socio)) {
+                        hasEmprestimo = true;
+                        break;
+                    }
+                }
+
+                if (!hasEmprestimo) {
+                    JOptionPane.showMessageDialog(null, "O sócio especificado não possui empréstimos");
+                    return;
+                }
+
+
                 // Show the ConsultarEmprestimos page with the found Socio as a parameter
                 setVisible(false);
                 new ConsultarEmprestimos(socio).setVisible(true);
@@ -219,5 +234,99 @@ public class RegistarDevolucao extends JFrame {
 
         add(mainPanel, BorderLayout.CENTER);
     }
+
+
+    protected String verTodos(String numeroSocioText){
+        // Convert the text to an integer
+        int numeroSocio;
+        try {
+            numeroSocio = Integer.parseInt(numeroSocioText);
+        } catch (NumberFormatException ex) {
+            return "O número de sócio especificado é inválido";
+        }
+
+        List<Socio> socios = Socios.getInstance().getSocios();
+        // Find the Socio with the given number
+        Socio socio = null;
+        for (Socio s : socios) { // Assuming 'socios' is the list of all Socio objects
+            if (s.getNumeroDeSocio() == numeroSocio) {
+                socio = s;
+                break;
+            }
+        }
+
+        // If no Socio was found, show an error message
+        if (socio == null) {
+            return "O sócio especificado não existe";
+        }
+
+        List<Emprestimo> emprestimos = Emprestimos.getInstance().getEmprestimos();
+        boolean hasEmprestimo = false;
+        for (Emprestimo emprestimo : emprestimos) {
+            if (emprestimo.getSocio().equals(socio)) {
+                hasEmprestimo = true;
+                break;
+            }
+        }
+
+        if (!hasEmprestimo) {
+            return "O sócio especificado não possui empréstimos";
+        }
+
+        return "A apresentar empréstimos do sócio";
+    }
+
+
+    protected String registarDevolucao(String numeroDeSocioText, String codigoExemplarText){
+        int numeroSocio;
+        List<Socio> socios = Socios.getInstance().getSocios();
+        try {
+            numeroSocio = Integer.parseInt(numeroDeSocioText);
+        } catch (NumberFormatException e2) {
+            return "O número de sócio especificado é inválido";
+        }
+
+        // Find the Socio with the given number
+        Socio socio = null;
+        for (Socio s : socios) {
+            if (s.getNumeroDeSocio() == numeroSocio) {
+                socio = s;
+                break;
+            }
+        }
+
+        // If no Socio was found, show an error message
+        if (socio == null) {
+            return "O sócio especificado não existe";
+        }
+
+        String codigoExemplar = codigoExemplarText;
+
+        // Get the list of Emprestimos.Emprestimo objects
+        List<Emprestimo> emprestimos = Emprestimos.getInstance().getEmprestimos();
+        boolean hasEmprestimos = false;
+        // Iterate over the list
+        for (Emprestimo emprestimo : emprestimos) {
+            // Check if the Socio's number and Exemplar's code match the retrieved text
+            if (emprestimo.getSocio().getNumeroDeSocio() == numeroSocio && !emprestimo.isDevolvido()) {
+                hasEmprestimos = true;
+                if (emprestimo.getExemplar().getCodigo().equals(codigoExemplar)) {
+                    // Register the return and show a success message
+                    emprestimo.devolver();
+                    // return to JanelaPrincipal
+                    return "Empréstimo devolvido com sucesso";
+                }
+            }
+        }
+        if (!hasEmprestimos) {
+            return "O sócio especificado não possui empréstimos em aberto";
+        }
+
+        // If no match was found, show an error message
+        return "O exemplar não se encontra emprestado ao sócio especificado";
+    }
+
+
+
 
 }

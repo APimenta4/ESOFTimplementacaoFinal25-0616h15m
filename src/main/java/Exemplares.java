@@ -23,4 +23,8 @@ public class Exemplares {
     public List<Exemplar> getExemplares() {
         return exemplares;
     }
+
+    public static void clearInstance() {
+        instance = null;
+    }
 }
