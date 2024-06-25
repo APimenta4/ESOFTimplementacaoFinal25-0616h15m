@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5916bcdf-e307-435a-9721-0765483fbccb" name="Changes" comment="Afonso final dia 24 falta corrigir os testes nao funcionam se forem todos de uma vez">
+    <list default="true" id="5916bcdf-e307-435a-9721-0765483fbccb" name="Changes" comment="Testes Afonso feitos, comentarios apagados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aquisicao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aquisicao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarAquisicoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarAquisicoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarAquisicoesExemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarAquisicoesExemplar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimosSocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimosSocio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Emprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Emprestimo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JanelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JanelaPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MenuAquisicoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MenuAquisicoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MenuEmprestimos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MenuEmprestimos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/NovaAquisicao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NovaAquisicao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/NovoEmprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NovoEmprestimo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Predefinicoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Predefinicoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/RegistarDevolucao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RegistarDevolucao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +136,7 @@
       <workItem from="1719223132346" duration="21610000" />
       <workItem from="1719246443909" duration="15248000" />
       <workItem from="1719301336020" duration="1308000" />
-      <workItem from="1719302675425" duration="10854000" />
+      <workItem from="1719302675425" duration="11161000" />
     </task>
     <task id="LOCAL-00001" summary="Versao Afonso - falta so algumas verificacoes e testes">
       <created>1719239876530</created>
@@ -199,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719311957365</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Testes Afonso feitos, comentarios apagados">
+      <created>1719313590064</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719313590064</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +204,8 @@
     <MESSAGE value="Versao Afonso - falta so algumas verificacoes e testes" />
     <MESSAGE value="Parte Afonso feita- falta testes" />
     <MESSAGE value="Afonso final dia 24 falta corrigir os testes nao funcionam se forem todos de uma vez" />
-    <option name="LAST_COMMIT_MESSAGE" value="Afonso final dia 24 falta corrigir os testes nao funcionam se forem todos de uma vez" />
+    <MESSAGE value="Testes Afonso feitos, comentarios apagados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testes Afonso feitos, comentarios apagados" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProjetoESOFT$NovoEmprestimoTeste.ic" NAME="NovoEmprestimoTeste Coverage Results" MODIFIED="1719302249952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

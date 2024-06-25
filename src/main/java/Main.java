@@ -6,7 +6,14 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
 
-                //--- Aqui, são adicionados alguns valores para testes
+                // ---- Testes Unitários ----
+                // Alguns dos testes unitários realizados foram implementados com métodos alternativo dentro da classe da própria página
+                // pois a nossa implementação visual não era compatível com os testes unitários que queríamos realizar
+                // contudo, esse método alternativo tem o mesmo comportamento e verificações que as verificações originais feitas na página
+                // --------------------------
+
+
+                //--- Aqui, no main, são adicionados alguns valores para testar o funcionamento da aplicação ---
 
                 // Sócio normal com o número máximo de empréstimos default (2)
                 Socio socio1 = new Socio("João", "sms", "Normal");

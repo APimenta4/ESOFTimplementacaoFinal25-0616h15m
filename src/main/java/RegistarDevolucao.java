@@ -295,7 +295,4 @@ public class RegistarDevolucao extends JFrame {
         return "O exemplar não se encontra emprestado ao sócio especificado";
     }
 
-
-
-
 }
