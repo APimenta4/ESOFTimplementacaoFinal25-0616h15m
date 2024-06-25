@@ -161,9 +161,9 @@ public class ConsultarEmprestimos extends JFrame {
         JPanel navigationPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel backLabel = new JLabel("← ");
         backLabel.setFont(new Font("Serif", Font.BOLD, 50));
-        backLabel.setForeground(new Color(51, 153, 255)); // Blue color
+        backLabel.setForeground(new Color(51, 153, 255));
         backLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        backLabel.setBorder(new EmptyBorder(0, 25, 0, 0)); // Add left margin
+        backLabel.setBorder(new EmptyBorder(0, 25, 0, 0));
         backLabel.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
                 setVisible(false);
@@ -175,7 +175,7 @@ public class ConsultarEmprestimos extends JFrame {
         JLabel emprestimosLabel = new JLabel("Empréstimos/");
         emprestimosLabel.setFont(new Font("Serif", Font.BOLD, 25));
         emprestimosLabel.setForeground(new Color(51, 153, 255));
-        emprestimosLabel.setBorder(new EmptyBorder(0, 10, 0, 0)); // Add left margin
+        emprestimosLabel.setBorder(new EmptyBorder(0, 10, 0, 0));
         navigationPanel.add(emprestimosLabel);
 
         JLabel consultarLabel = new JLabel("Consultar empréstimos");

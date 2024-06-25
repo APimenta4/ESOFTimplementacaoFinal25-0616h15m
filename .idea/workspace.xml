@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5916bcdf-e307-435a-9721-0765483fbccb" name="Changes" comment="Testes Afonso feitos, comentarios apagados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RegistarDevolucao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RegistarDevolucao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +62,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ConsultarAquisicaoExemplarTeste">
     <configuration name="ConsultarAquisicaoExemplarTeste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
@@ -136,7 +135,7 @@
       <workItem from="1719223132346" duration="21610000" />
       <workItem from="1719246443909" duration="15248000" />
       <workItem from="1719301336020" duration="1308000" />
-      <workItem from="1719302675425" duration="11161000" />
+      <workItem from="1719302675425" duration="17756000" />
     </task>
     <task id="LOCAL-00001" summary="Versao Afonso - falta so algumas verificacoes e testes">
       <created>1719239876530</created>
@@ -194,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719313590064</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Testes Afonso feitos, comentarios apagados">
+      <created>1719313861423</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719313861423</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
