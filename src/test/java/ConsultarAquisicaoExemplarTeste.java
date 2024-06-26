@@ -24,7 +24,7 @@ public class ConsultarAquisicaoExemplarTeste{
 
     @Test
     public void testPesquisarAquisicoesExemplarValid() {
-        Socio socio = new Socio("João", "sms", "Normal");
+        Socio socio = new Socio("João", "sms", "Premium", "Sapo", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
         Editora editora = new Editora("editora");
         Editoras.getInstance().addEditora(editora);
@@ -53,7 +53,7 @@ public class ConsultarAquisicaoExemplarTeste{
 
     @Test
     public void testPesquisarAquisicoesExemplarInvalid() {
-        Socio socio = new Socio("João", "sms", "Normal");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
         Editora editora = new Editora("editora");
         Editoras.getInstance().addEditora(editora);
@@ -73,7 +73,7 @@ public class ConsultarAquisicaoExemplarTeste{
 
     @Test
     public void testPesquisarAquisicoesExemplarNoAquisicao() {
-        Socio socio = new Socio("João", "sms", "Normal");
+        Socio socio = new Socio("João", "sms", "Premium", "Teste", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
         Editora editora = new Editora("editora");
         Editoras.getInstance().addEditora(editora);

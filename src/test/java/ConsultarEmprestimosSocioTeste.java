@@ -29,7 +29,7 @@ public class ConsultarEmprestimosSocioTeste {
 
     @Test
     public void testSearchSocioWithoutEmprestimos() {
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "adea", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
 
         ConsultarEmprestimosSocio consultarEmprestimosSocio = new ConsultarEmprestimosSocio();
@@ -43,7 +43,7 @@ public class ConsultarEmprestimosSocioTeste {
 
     @Test
     public void testSearchSocioWithEmprestimos() {
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "adea", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
         Exemplar exemplar = new Exemplar("123", "1", "Valid Book", "Genre", new Editora("Valid Editora"), "2020", "100", "P1/E1");
         Exemplares.getInstance().addExemplar(exemplar);
@@ -85,7 +85,7 @@ public class ConsultarEmprestimosSocioTeste {
 
     @Test
     public void testSearchSocioWithMultipleEmprestimos() {
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "adea", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
         Exemplar exemplar = new Exemplar("123", "1", "Valid Book", "Genre", new Editora("Valid Editora"), "2020", "100", "P1/E1");
         Exemplares.getInstance().addExemplar(exemplar);

@@ -25,7 +25,7 @@ public class RegistarDevolucaoTeste {
 
     @Test
     public void testVerTodosSuccessful() {
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
         Exemplar exemplar = new Exemplar("123", "1", "Valid Book", "Genre", new Editora("Valid Editora"), "2020", "100", "P1/E1");
         Exemplares.getInstance().addExemplar(exemplar);
@@ -41,7 +41,7 @@ public class RegistarDevolucaoTeste {
 
     @Test
     public void testVerTodosSocioWithoutEmprestimos() {
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
 
         RegistarDevolucao registarDevolucao = new RegistarDevolucao();
@@ -68,7 +68,7 @@ public class RegistarDevolucaoTeste {
 
     @Test
     public void testRegistarDevolucaoSuccessful() {
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
         Exemplar exemplar = new Exemplar("123", "1", "Valid Book", "Genre", new Editora("Valid Editora"), "2020", "100", "P1/E1");
         Exemplares.getInstance().addExemplar(exemplar);
@@ -99,7 +99,7 @@ public class RegistarDevolucaoTeste {
 
     @Test
     public void testRegistarDevolucaoSocioWithoutOpenEmprestimos() {
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
         Exemplar exemplar = new Exemplar("123", "1", "Valid Book", "Genre", new Editora("Valid Editora"), "2020", "100", "P1/E1");
         Exemplares.getInstance().addExemplar(exemplar);
@@ -117,7 +117,7 @@ public class RegistarDevolucaoTeste {
 
     @Test
     public void testRegistarDevolucaoSocioWithoutEmprestimos() {
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
 
         RegistarDevolucao registarDevolucao = new RegistarDevolucao();
@@ -130,7 +130,7 @@ public class RegistarDevolucaoTeste {
 
     @Test
     public void testRegistarDevolucaoExemplarNotEmprestado() {
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
         Exemplar exemplar = new Exemplar("123", "1", "Valid Book", "Genre", new Editora("Valid Editora"), "2020", "100", "P1/E1");
         Exemplares.getInstance().addExemplar(exemplar);

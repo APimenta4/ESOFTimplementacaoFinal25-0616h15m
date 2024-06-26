@@ -27,4 +27,19 @@ public class Exemplares {
     public static void clearInstance() {
         instance = null;
     }
+
+    public boolean exemplarExists(String bookTitle, String author, String genre) {
+        List<Exemplar> exemplares = Exemplares.getInstance().getExemplares();
+
+        for (Exemplar exemplar : exemplares) {
+            if (exemplar.getTitulo().equals(bookTitle) &&
+                    exemplar.getAutores().equals(author) &&
+                    exemplar.getGeneros().equals(genre)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }

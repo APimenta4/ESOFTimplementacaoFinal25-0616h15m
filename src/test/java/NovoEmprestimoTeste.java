@@ -31,7 +31,7 @@ public class NovoEmprestimoTeste {
     @Test
     public void testAdicionarEmprestimoWithValidSocioAndExemplar() {
         // Create valid Socio and Exemplar objects
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
         Exemplar exemplar = new Exemplar("123", "1", "Valid Book", "Genre", new Editora("Valid Editora"), "2020", "100", "P1/E1");
         Exemplares.getInstance().addExemplar(exemplar);
@@ -52,7 +52,7 @@ public class NovoEmprestimoTeste {
     @Test
     public void testAdicionarEmprestimoWithValidSocioAndNonExistentExemplar() {
         // Create valid Socio object
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
 
         // Exemplar with non-existent code
@@ -94,7 +94,7 @@ public class NovoEmprestimoTeste {
     @Test
     public void testAdicionarEmprestimoWithNormalSocioAtMaxLoans() {
         // Create a Socio with maximum allowed loans
-        Socio socio = new Socio("Max Loan Socio", "maxloan@example.com", "Normal");
+        Socio socio = new Socio("João", "sms", "Normal", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
 
         // Add exemplars to reach the maximum loan limit
@@ -131,7 +131,7 @@ public class NovoEmprestimoTeste {
     @Test
     public void testAdicionarEmprestimoWithPremiumSocioAtMaxLoans() {
         // Create a Socio with maximum allowed loans
-        Socio socio = new Socio("Max Loan Socio", "maxloan@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
 
         // Add exemplars to reach the maximum loan limit
@@ -176,7 +176,7 @@ public class NovoEmprestimoTeste {
     @Test
     public void testAdicionarEmprestimoWithInvalidExemplarCodeFormat() {
         // Create a valid Socio object
-        Socio socio = new Socio("Valid Socio", "socio@example.com", "Premium");
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
 
         // Create a new NovoEmprestimo object
@@ -196,11 +196,11 @@ public class NovoEmprestimoTeste {
     @Test
     public void testAdicionarEmprestimoWithLoanedExemplar() {
         // Create Socio 1
-        Socio socio1 = new Socio("Socio 1", "socio1@example.com", "Regular");
+        Socio socio1 = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio1);
 
         // Create Socio 2
-        Socio socio2 = new Socio("Socio 2", "socio2@example.com", "Regular");
+        Socio socio2 = new Socio("João2", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio2);
 
         // Create Exemplar
@@ -230,8 +230,10 @@ public class NovoEmprestimoTeste {
     @Test
     public void testAdicionarEmprestimoSocioUnpaidAnnuity() {
         // Create Socio 1
-        Socio socio = new Socio("Socio 1", "socio1@example.com", "Premium", 2023);
+        Socio socio = new Socio("João", "sms", "Premium", "Email", 123456789, "Rua do João", 123456789);
         Socios.getInstance().addSocio(socio);
+        socio.cancelarAnuidade();
+
 
         // Create Exemplar
         Exemplar exemplar = new Exemplar("123", "1", "Book 1", "Genre", new Editora("Editora 1"), "2020", "100", "P1/E1");

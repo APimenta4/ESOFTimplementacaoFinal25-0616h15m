@@ -1,0 +1,1 @@
+Para abrir o projeto desenvolvido, correr classe "Main.java"

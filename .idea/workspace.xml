@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5916bcdf-e307-435a-9721-0765483fbccb" name="Changes" comment="Testes Afonso feitos, comentarios apagados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsultarEmprestimos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Emprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Emprestimo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exemplares.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exemplares.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JanelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JanelaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Socio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Socios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Socios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ConsultarAquisicaoExemplarTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ConsultarAquisicaoExemplarTeste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ConsultarEmprestimosSocioTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ConsultarEmprestimosSocioTeste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/NovoEmprestimoTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/NovoEmprestimoTeste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RegistarDevolucaoTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RegistarDevolucaoTeste.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +56,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Utilizador/Desktop/EntregaFase2/ProjetoESOFT&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -62,63 +73,60 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConsultarAquisicaoExemplarTeste">
-    <configuration name="ConsultarAquisicaoExemplarTeste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="ConsultarPorTituloDoLivroTeste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConsultarAquisicaoExemplarTeste" />
+      <option name="MAIN_CLASS_NAME" value="ConsultarPorTituloDoLivroTeste" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConsultarPorTituloDoLivroTeste.testConsultarPorTituloDoLivro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConsultarAquisicaoExemplarTeste" />
-      <option name="METHOD_NAME" value="testPesquisarAquisicoesExemplarEmpty" />
+      <option name="MAIN_CLASS_NAME" value="ConsultarPorTituloDoLivroTeste" />
+      <option name="METHOD_NAME" value="testConsultarPorTituloDoLivro" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NovoEmprestimoTeste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConsultarAquisicaoExemplarTeste" />
-      <option name="METHOD_NAME" value="testPesquisarAquisicoesExemplarInvalid" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="NovoEmprestimoTeste" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarNoAquisicao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PesquisarLivroTeste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConsultarAquisicaoExemplarTeste" />
-      <option name="METHOD_NAME" value="testPesquisarAquisicoesExemplarNoAquisicao" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="PesquisarLivroTeste" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RegistarNovaReservaTeste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="swing-app" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConsultarAquisicaoExemplarTeste" />
-      <option name="METHOD_NAME" value="testPesquisarAquisicoesExemplarValid" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="RegistarNovaReservaTeste" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConsultarAquisicaoExemplarTeste" />
-        <item itemvalue="JUnit.ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarNoAquisicao" />
-        <item itemvalue="JUnit.ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarInvalid" />
-        <item itemvalue="JUnit.ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarEmpty" />
-        <item itemvalue="JUnit.ConsultarAquisicaoExemplarTeste.testPesquisarAquisicoesExemplarValid" />
+        <item itemvalue="JUnit.NovoEmprestimoTeste" />
+        <item itemvalue="JUnit.PesquisarLivroTeste" />
+        <item itemvalue="JUnit.ConsultarPorTituloDoLivroTeste" />
+        <item itemvalue="JUnit.RegistarNovaReservaTeste" />
+        <item itemvalue="JUnit.ConsultarPorTituloDoLivroTeste.testConsultarPorTituloDoLivro" />
       </list>
     </recent_temporary>
   </component>
@@ -136,6 +144,16 @@
       <workItem from="1719246443909" duration="15248000" />
       <workItem from="1719301336020" duration="1308000" />
       <workItem from="1719302675425" duration="17756000" />
+      <workItem from="1719328388571" duration="430000" />
+      <workItem from="1719330127443" duration="8060000" />
+      <workItem from="1719340674447" duration="127000" />
+      <workItem from="1719342939663" duration="578000" />
+      <workItem from="1719344067526" duration="1276000" />
+      <workItem from="1719393722558" duration="2670000" />
+      <workItem from="1719398262244" duration="2642000" />
+      <workItem from="1719402320347" duration="519000" />
+      <workItem from="1719403229719" duration="1060000" />
+      <workItem from="1719414184809" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="Versao Afonso - falta so algumas verificacoes e testes">
       <created>1719239876530</created>
@@ -200,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719313861423</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Testes Afonso feitos, comentarios apagados">
+      <created>1719328660225</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719328660225</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

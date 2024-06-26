@@ -1,0 +1,118 @@
+Error on line 36 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarAquisicoes.java:36: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 142 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarAquisicoes.java:142: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 34 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarAquisicoesExemplar.java:34: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 38 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarEmprestimos.java:38: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 167 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarEmprestimos.java:167: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 35 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarEmprestimosSocio.java:35: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 34 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\NovaAquisicao.java:34: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 36 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\NovoEmprestimo.java:36: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 35 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\RegistarDevolucao.java:35: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 1 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:1: error: package org.junit.jupiter.api does not exist
+import org.junit.jupiter.api.BeforeEach;
+                            ^
+Error on line 2 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:2: error: package org.junit.jupiter.api does not exist
+import org.junit.jupiter.api.Test;
+                            ^
+Error on line 11 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:11: error: package org.junit.jupiter.api does not exist
+import static org.junit.jupiter.api.Assertions.assertEquals;
+                                   ^
+Error on line 11 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:11: error: static import only from classes and interfaces
+import static org.junit.jupiter.api.Assertions.assertEquals;
+^
+Error on line 18 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:18: error: cannot find symbol
+    @BeforeEach
+     ^
+  symbol:   class BeforeEach
+  location: class NovoEmprestimoTeste
+Error on line 30 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:30: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class NovoEmprestimoTeste
+Error on line 46 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:46: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class NovoEmprestimoTeste
+Error on line 62 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:62: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class NovoEmprestimoTeste
+Error on line 36 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarAquisicoes.java:36: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 142 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarAquisicoes.java:142: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 34 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarAquisicoesExemplar.java:34: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 38 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarEmprestimos.java:38: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 167 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarEmprestimos.java:167: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 35 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\ConsultarEmprestimosSocio.java:35: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 34 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\NovaAquisicao.java:34: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 36 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\NovoEmprestimo.java:36: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 35 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\main\java\RegistarDevolucao.java:35: error: unmappable character (0x90) for encoding windows-1252
+        JLabel backLabel = new JLabel("â†? ");
+                                         ^
+Error on line 1 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:1: error: package org.junit.jupiter.api does not exist
+import org.junit.jupiter.api.BeforeEach;
+                            ^
+Error on line 2 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:2: error: package org.junit.jupiter.api does not exist
+import org.junit.jupiter.api.Test;
+                            ^
+Error on line 11 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:11: error: package org.junit.jupiter.api does not exist
+import static org.junit.jupiter.api.Assertions.assertEquals;
+                                   ^
+Error on line 11 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:11: error: static import only from classes and interfaces
+import static org.junit.jupiter.api.Assertions.assertEquals;
+^
+Error on line 18 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:18: error: cannot find symbol
+    @BeforeEach
+     ^
+  symbol:   class BeforeEach
+  location: class NovoEmprestimoTeste
+Error on line 30 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:30: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class NovoEmprestimoTeste
+Error on line 46 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:46: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class NovoEmprestimoTeste
+Error on line 62 in C:\Users\Utilizador\Desktop\ProjetoESOFT\src\test\java\NovoEmprestimoTeste.java:62: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class NovoEmprestimoTeste

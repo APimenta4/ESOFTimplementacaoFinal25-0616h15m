@@ -22,6 +22,18 @@ public class Emprestimo {
         this.multaPaga = false;
     }
 
+    // Construtor secondário para experimentar com empréstimos com multa
+    public Emprestimo(Socio socio, Exemplar exemplar, Date data){
+        this.socio = socio;
+        this.exemplar = exemplar;
+        this.dataDeEmprestimo = data;
+        this.devolvido = false;
+        this.valorMulta = 0.0;
+        this.dataLimite = new Date();
+        this.dataLimite.setDate(this.dataDeEmprestimo.getDate() + ValoresPredefinicoes.getInstance().getDiasEmprestimo());
+        this.multaPaga = false;
+    }
+
     public void devolver() {
         this.devolvido = true;
         this.dataDeDevolucao = new Date();
@@ -32,6 +44,19 @@ public class Emprestimo {
             long diffDays = diff / (24 * 60 * 60 * 1000);
             this.valorMulta = diffDays * ValoresPredefinicoes.getInstance().getMultaDia();
         }
+    }
+
+
+    public double getValorMulta() {
+        return valorMulta;
+    }
+
+    public boolean isMultaPaga() {
+        return multaPaga;
+    }
+
+    public void setMultaPaga(boolean multaPaga) {
+        this.multaPaga = multaPaga;
     }
 
     public Socio getSocio() {

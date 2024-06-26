@@ -1,5 +1,6 @@
 
 import javax.swing.SwingUtilities;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,16 +17,18 @@ public class Main {
                 //--- Aqui, no main, são adicionados alguns valores para testar o funcionamento da aplicação ---
 
                 // Sócio normal com o número máximo de empréstimos default (2)
-                Socio socio1 = new Socio("João", "sms", "Normal");
-                // Sócio sem anuidade paga (utiliza um construtor secundário para testes, os sócios implementados "pagam" a anuidade logo quando são registados)
-                Socio socio4 = new Socio("Antonia", "sms", "Premium", 2023);
-                // Sócio com o número máximo de empréstimos default (2) mas de tipo premium (consegue registar mais)
-                Socio socio5 = new Socio("Antonio", "sms", "Premium");
-                // Sócio sem empréstimos
-                Socio socio6 = new Socio("Rodrigo", "sms", "Premium");
+                Socio socio1 = new Socio("João", "sms", "Normal","email", 123456789, "Rua do João", 123456789);
 
-                Socio socio2 = new Socio("Tomas", "sms", "Premium");
-                Socio socio3 = new Socio("Maria", "sms", "Premium");
+                // Sócios com 1 empréstimo cada
+                Socio socio2 = new Socio("Tomas", "sms", "Premium",  "email2", 123456789, "Rua do João", 123456789);
+                Socio socio3 = new Socio("Maria", "sms", "Premium", "email3", 123456789, "Rua do João", 123456789);
+
+                // Sócio sem anuidade paga (utiliza um construtor secundário para testes, os sócios implementados "pagam" a anuidade logo quando são registados)
+                Socio socio4 = new Socio("Antonia", "sms", "Premium",  2023,"mail", 456789012, "Avenida Principal", 987654321);
+                // Sócio com o número máximo de empréstimos default (2) mas de tipo premium (consegue registar mais)
+                Socio socio5 = new Socio("Antonio", "sms", "Premium", "sapo", 999999999, "Estrada de Leiria", 989898989);
+                // Sócio sem empréstimos
+                Socio socio6 = new Socio("Rodrigo", "sms", "Premium", "gmail", 965231232, "Algarve", 976543218);
 
                 Socios.getInstance().addSocio(socio1);
                 Socios.getInstance().addSocio(socio2);
@@ -83,6 +86,13 @@ public class Main {
                 Emprestimos.getInstance().addEmprestimo(emprestimo4);
                 Emprestimos.getInstance().addEmprestimo(emprestimo5);
                 Emprestimos.getInstance().addEmprestimo(emprestimo6);
+
+                // Cria um empréstimo já devolvido com uma multa não paga associada
+                Date dateWithMulta = new Date();
+                dateWithMulta.setTime(dateWithMulta.getTime() - 30 * 24 * 60 * 60 * 1000);  // 30 = número de dias
+                Emprestimo emprestimo7 = new Emprestimo(socio1, exemplar4, dateWithMulta);
+                Emprestimos.getInstance().addEmprestimo(emprestimo7);
+                emprestimo7.devolver();
 
                 new JanelaPrincipal().setVisible(true);
             }

@@ -73,17 +73,31 @@ public class JanelaPrincipal extends JFrame {
         JPanel bottomPanel = new JPanel(new BorderLayout());
 
         JButton exitButton = new JButton("Sair");
-        JLabel settingsLabel = new JLabel(settingsIcon);
+        JButton settingsButton = new JButton(settingsIcon);
+        settingsButton.setFocusPainted(false);
+        settingsButton.setOpaque(false);
+
 
         JPanel exitPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         exitPanel.setBorder(new EmptyBorder(0, 0, 7, 25));
         exitPanel.add(exitButton);
+
+        JLabel settingsLabel = new JLabel("");
 
 
         JPanel settingsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         settingsPanel.setBorder(new EmptyBorder(0, 25, 15, 0));
         settingsPanel.add(settingsLabel);
 
+        settingsPanel.add(settingsButton);
+
+        settingsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new Predefinicoes().setVisible(true);
+            }
+        });
         bottomPanel.add(settingsPanel, BorderLayout.WEST);
         bottomPanel.add(exitPanel, BorderLayout.EAST);
 
@@ -102,7 +116,10 @@ public class JanelaPrincipal extends JFrame {
         sociosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Sócios selected");
+                // Hide the current window
+                setVisible(false);
+                // Show the new window
+                new MenuSocios().setVisible(true);
             }
         });
 
@@ -119,21 +136,30 @@ public class JanelaPrincipal extends JFrame {
         reservasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Reservas selected");
+                // Hide the current window
+                setVisible(false);
+
+                // Show the new window
+                new MenuReservas().setVisible(true);
             }
         });
 
         pagamentosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Pagamentos e Multas selected");
+                setVisible(false);
+                new MenuPagamentos().setVisible(true);
             }
         });
 
         pesquisasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Pesquisas e Estatística selected");
+                // Hide the current window
+                setVisible(false);
+
+                // Show the new window
+                new MenuPesquisasEstatisticas().setVisible(true);
             }
         });
 
